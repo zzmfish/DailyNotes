@@ -5,6 +5,15 @@ nginx -s quit
 nginx -s reload
 ```
 
+#### 安装文件位置（Ubuntu）
+```bash
+# 配置文件
+/etc/nginx/nginx.conf
+
+# 静态网页
+/var/www/html/
+```
+
 #### 配置文件
 ```nginx
 http {
