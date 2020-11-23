@@ -38,3 +38,4 @@ split --verbose -d -a 3 -l $LineCount $FileName
 # 自动添加crontab
 crontab -l | { cat; echo "0 * * * * mycommand"; } | crontab -
 ```
+
