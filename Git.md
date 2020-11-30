@@ -30,7 +30,7 @@ git log --name-status -10
 git log -n20 --graph --pretty=oneline master
 ```
 
-#### 工作区
+#### 储藏
 ```bash
 # 储藏更改
 git stash
@@ -43,6 +43,19 @@ git stash list
 
 # 应用最近的储藏
 git stash apply
+```
+
+#### 删除
+```bash
+# 从仓库和本地文件删除
+git rm $file_name
+
+# 递归删除目录
+git rm -r $folder_name
+
+# 只从仓库删除
+git rm --cached $file_name
+
 ```
 
 #### 分支
