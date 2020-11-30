@@ -15,6 +15,7 @@ echo ${varname/abc/123}
 
 find -mtime 0 -type f  #24小时内修改
 find -mtime +0 -type f  #24小时前修改
+find -cmin -30 #30分钟前修改
 find -size 0  #大小为0
 find -size -10k  #小于10k
 find -type d -empty  #空目录
