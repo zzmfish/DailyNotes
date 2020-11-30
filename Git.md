@@ -90,6 +90,9 @@ git reset --hard $commit_id
 
 # 合并特定commit
 git cherry-pick $commit_id
+
+# 取消合并
+git merge --abort
 ```
 #### 回滚
 ```bash
