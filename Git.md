@@ -43,6 +43,7 @@ git stash list
 
 # 应用最近的储藏
 git stash apply
+git stash apply stash@{1}
 ```
 
 #### 删除
