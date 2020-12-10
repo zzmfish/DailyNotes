@@ -1,0 +1,6 @@
+##### 命令
+```bash
+tmux new-session -s $session_name
+tmux list-sessions
+tmux attach -t $session_name
+```
