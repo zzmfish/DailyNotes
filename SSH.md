@@ -18,22 +18,22 @@ chmod 600 ~/.ssh/authorized_keys
 # -R：反向端口映射
 # -N：不执行shell
 # -C：压缩
-ssh -C -N -R {port1}:{host2}:{port2} {user1}@{host1} -p {ssh_port}
+ssh -C -N -R $port1:$host2:$port2 $user1@$host1 -p$ssh_port
 ```
 
 ##### scp
 ```bash
-scp -P {port} {local_file} {user_name}@{host}:{remote_path}
+scp -P $port $local_file $user_name@$host:$remote_path
 ```
 
 ##### sshfs
-```
-sshfs -o nonempty -p {port} {user_name}@{host}:  {local_dir}
+```bash
+sshfs -o nonempty -p$port $user_name@$host:  $local_dir
 ```
 
 ##### rsync
-```
-rsync -ave ssh --exclude=.svn {local_dir} {user_name}@{remote_host}:{remote_dir}
+```bash
+rsync -ave ssh --exclude=.svn $local_dir $user_name@$remote_host:$remote_dir
 ```
 
 ##### 使用密钥对传输加密数据

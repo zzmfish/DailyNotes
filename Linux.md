@@ -2,6 +2,9 @@
 #### 算术运算
 ```bash
 echo $(( 10 + 3 ))
+
+#求余数
+echo `expr 5 % 4`
 ```
 
 #### 字符串
@@ -88,5 +91,8 @@ crontab -l | { cat; echo "0 * * * * mycommand"; } | crontab -
 
 # 显示进程的子孙进程
 ps --ppid $ppid
+
+# 退出时关闭进程组
+trap 'trap - SIGTERM && kill 0' SIGINT SIGTERM EXIT
 ```
 

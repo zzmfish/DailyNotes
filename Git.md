@@ -95,6 +95,7 @@ git cherry-pick $commit_id
 # 取消合并
 git merge --abort
 ```
+
 #### 回滚
 ```bash
 #回滚到commit（之后的提交进入到缓冲区）
@@ -108,4 +109,7 @@ git reset --soft HEAD^
 
 # 撤销add
 git reset HEAD $file_name
+
+# 恢复本地删除的文件
+git ls-files -d | xargs -i git checkout {}
 ```
