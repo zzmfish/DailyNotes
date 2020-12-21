@@ -1,12 +1,12 @@
 
-##### 库
+## 库
 ```javascript
 //当前数据库：
 db
 db.getName()
 ```
 
-##### 查询
+## 查找
 ```javascript
 //时间范围：
 db.colname.find({fieldname: {$lt: new Date('2017-05-10')}})
@@ -33,7 +33,7 @@ db.colname.find().forEach(function(item) {
 })
 ```
 
-##### 聚合
+## 聚合
 ```javascript
 //北京时间日期
 col.aggregate([
@@ -50,7 +50,7 @@ col.aggregate([
 ])
 ```
 
-##### 索引
+## 索引
 ```javascript
 //查看索引
 db.colname.getIndexes()
@@ -64,7 +64,7 @@ db.colname.createIndex({"fieldname": 1},
 ```
 
 
-##### 副本
+## 副本
 ```javascript
 //初始化：
 rs.initiate({
@@ -92,7 +92,7 @@ cfg.members[1].priority = 2
 rs.reconfig(cfg)
 ```
 
-##### 分片
+## 分片
 ```javascript
 //database开启分片
 sh.enableSharding(dbname)
@@ -114,9 +114,9 @@ db.adminCommand("flushRouterConfig")
 ```
 
 
-##### 性能分析
-
-```javascript
+## 运维
+#### 性能
+```js
 // 显示某个表正在进行的操作
 db.currentOp().inprog.forEach(
   function(item) {
@@ -158,7 +158,7 @@ db.currentOp().inprog.forEach(function(item) {
 })
 ```
 
-##### 运维
+#### 删除
 ```javascript
 //删除数据库：
 db.drop/*危险*/Database()
@@ -174,8 +174,12 @@ for (var i in dbs){
     print( "dropping db " + db.getName() );
     db.dropDatabase();
 }
+```
 
+#### 退出
+```js
 //退出
 use admin;
 db.shutdownServer()
+
 ```

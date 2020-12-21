@@ -1,80 +1,78 @@
 
 
-#### 仓库
+## 仓库
 ```bash
-# 更改代码库地址
+#更改代码库地址
 git remote set-url origin $new_url
 
 
-# 显示某个版本的文件
+# 示某个版本的文件
 git show $revision:$file_path
 
 ```
 
 
-#### 日志
+## 日志
 ```bash
-# 查看最近10条日志
+#查看最近10条日志
 git log -n 10
 
-# 单行显示
+#单行显示
 git log --pretty=online
 
-# 显示修改的文件
+#显示修改的文件
 git log --name-only -10
 
-# 显示修改的文件内容
+#显示修改的文件内容
 git log --name-status -10
 
-# 查看master的修改
+#查看master的修改
 git log -n20 --graph --pretty=oneline master
 ```
 
-#### 储藏
+## 储藏
 ```bash
-# 储藏更改
+#储藏更改
 git stash
 
-# 储藏更改并说明原因
+#储藏更改并说明原因
 git stash push -m $message
 
-# 查看现有储藏
+#查看现有储藏
 git stash list
 
-# 应用最近的储藏
+#应用最近的储藏
 git stash apply
 git stash apply stash@{1}
 ```
 
-#### 删除
+## 分支
 ```bash
-# 从仓库和本地文件删除
-git rm $file_name
+#显示当前所属分支
+git symbolic-ref --short HEAD
 
-# 递归删除目录
-git rm -r $folder_name
-
-# 只从仓库删除
-git rm --cached $file_name
-
-```
-
-#### 分支
-```bash
-#  新建分支
+#新建分支
 git checkout -b $branch_name
 
-#  删除本地分支
+#删除本地分支
 git branch -d $branch_name
-
-# 推送到远程分支
-git push origin $branch_name
 
 #显示全部分支
 git branch -a
 ```
+#### 远程分支
+```bash
+#显示远程分支
+git branch -r
 
-#### 合并
+#推送到远程分支
+git push origin $branch_name
+
+#拉取远程分支到本地
+git fetch origin $branch_name
+```
+
+#### 合并分支
 ```bash
 # 合并偏离投分支：放弃本地修改
 git fetch origin
@@ -96,7 +94,20 @@ git cherry-pick $commit_id
 git merge --abort
 ```
 
-#### 回滚
+## 删除
+```bash
+#从仓库和本地文件删除
+git rm $file_name
+
+#递归删除目录
+git rm -r $folder_name
+
+#只从仓库删除
+git rm --cached $file_name
+```
+
+
+## 回滚
 ```bash
 #回滚到commit（之后的提交进入到缓冲区）
 # git reset $commit_id
