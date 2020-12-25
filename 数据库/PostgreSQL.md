@@ -48,7 +48,11 @@ postgres=#
 #### 表
 ###### ALTER TABLE
 ```postgresql
-ALTER TABLE table_name ADD column_name column_type
+-- 增加列
+ALTER TABLE table_name ADD column_name column_type;
+
+--重命名列
+ALTER TABLE table_name RENAME COLUMN column_name TO new_name;
 ```
 
 #### 索引
