@@ -1,4 +1,5 @@
-## 设置
+## 安装
+#### 初始化
 安装完毕后，系统会创建一个数据库超级用户 postgres，密码为空。
 
 ```bash
@@ -23,12 +24,37 @@ postgres=#
 \q
 ```
 
-## 数据库
-查看已经存在的数据库：
-```
+## 数据库操作
+###### 查看已经存在的数据库：
+```postgresql
 \l
 ```
-进入数据库：
-```
+
+###### 进入数据库：
+```postgresql
 \c dbname
+```
+
+###### 查看所有表格
+```postgresql
+\d
+```
+###### 查看表格信息
+```postgresql
+\d table_name
+```
+
+## SQL命令
+#### 表
+###### ALTER TABLE
+```postgresql
+ALTER TABLE table_name ADD column_name column_type
+```
+
+#### 索引
+###### CREATE INDEX
+```postgresql
+-- 唯一索引
+CREATE UNIQUE INDEX index_name
+on table_name (column_name);
 ```

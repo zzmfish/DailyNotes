@@ -1,7 +1,47 @@
 
-#### 使用getopts处理参数
+### 运算符
+##### 算术运算
+```bash
+echo $(( 10 + 3 ))
 
-getopts是Bash内置命令，不支持长选项。
+#求余数
+echo `expr 5 % 4`
+```
+##### 字符串
+```bash
+# 字符串替换（abc替换成123）
+echo ${variable/abc/123}
+```
+
+---
+### 流程控制
+##### case
+```bash
+case EXPRESSION in
+
+  PATTERN_1)
+    STATEMENTS
+    ;;
+  PATTERN_2)
+    STATEMENTS
+    ;;
+  PATTERN_N)
+    STATEMENTS
+    ;;
+  *)
+    STATEMENTS
+    ;;
+esac
+```
+
+
+
+
+
+
+---
+### 内置命令
+##### getopts
 
 ```bash
 while getopts "a:bc" arg #冒号表示该选项需要参数
@@ -22,4 +62,10 @@ do
       ;;
   esac
 done
+```
+
+##### trap
+```bash
+#退出时关闭进程组
+trap 'trap - SIGTERM && kill 0' SIGINT SIGTERM EXIT
 ```

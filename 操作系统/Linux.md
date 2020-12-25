@@ -1,31 +1,14 @@
 
-#### 算术运算
-```bash
-echo $(( 10 + 3 ))
+### 常用命令
 
-#求余数
-echo `expr 5 % 4`
+##### crontab
+```bash
+# 添加crontab
+crontab -l | { cat; echo "0 * * * * mycommand"; } | crontab -
 ```
 
-#### 字符串
-```bash
-# 字符串替换（abc替换成123）
-echo ${variable/abc/123}
-```
 
-#### 文本文件
-```bash
-# 两行合并成一行
-sed -n '{N;s/\n/ /;p}' $input_file
-
-# 三行合并成一行
-sed -n '{N;N;s/\n/ /g;p}' $input_file
-
-# 按行数拆分文件
-split --verbose -d -a 3 -l $line_count $file_name
-```
-
-#### 查找文件
+##### find
 ```bash
 # 修改时间 < 24h（不到1天）
 find -mtime 0
@@ -54,7 +37,38 @@ find -type l -! -exec test -e {} \; -print
 ```
 
 
-#### 文件压缩
+##### ps
+```bash
+# 显示进程的子孙进程
+ps --ppid $ppid
+```
+
+
+
+##### rsync
+```bash
+# 通过ssh同步
+rsync -zvre "ssh -p $ssh_port" $local_dir $remote_user@$rename_host:$remote_dir
+```
+
+##### sed
+```bash
+# 两行合并成一行
+sed -n '{N;s/\n/ /;p}' $input_file
+
+# 三行合并成一行
+sed -n '{N;N;s/\n/ /g;p}' $input_file
+```
+
+##### split
+```
+# 按行数拆分文件
+split --verbose -d -a 3 -l $line_count $file_name
+```
+
+
+
+##### tar
 ```bash
 #压缩同时加上目录
 tar cvzf $file_name --transform 's,^,mydir/,' --show-transformed-names $files
@@ -64,9 +78,6 @@ tar xf $file_name --strip-components 1
 
 # 显示文件列表和大小
 tar tvf $file_name
-
-# 显示zip文件列表
-unzip -l $file_name
 
 # 压缩文件
 # --ignore-failed-read: 忽略读文件错误
@@ -78,21 +89,9 @@ tar czvf scenarios20201203.tgz \
     -T file_lis
 ```
 
-##### rsync
+##### unzip
 ```bash
-# 通过ssh同步
-rsync -zvre "ssh -p $ssh_port" $local_dir $remote_user@$rename_host:$remote_dir
-```
-
-##### 其他
-```bash
-# 添加crontab
-crontab -l | { cat; echo "0 * * * * mycommand"; } | crontab -
-
-# 显示进程的子孙进程
-ps --ppid $ppid
-
-# 退出时关闭进程组
-trap 'trap - SIGTERM && kill 0' SIGINT SIGTERM EXIT
+# 显示zip文件列表
+unzip -l $file_name
 ```
 
