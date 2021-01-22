@@ -1,0 +1,78 @@
+```python
+reload(sys)
+sys.setdefaultencoding('utf-8')
+```
+
+日志
+（输出日志到文件）
+logging.basicConfig(filename='example.log', format='%(levelname)s:%(message)s', level=logging.DEBUG)
+
+logger = logging.getLogger()
+logger.addHandler(logging.StreamHandler(sys.stdout))
+logger.setLevel(logging.DEBUG)
+
+（根据日期切换日志文件）
+logging.basicConfig()
+file_handler = logging.handlers.TimedRotatingFileHandler("video.log", 'MIDNIGHT')
+file_handler.formatter = logging.Formatter('%(asctime)s %(message)s’)
+logger = logging.getLogger()
+logger.addHandler(file_handler)
+
+日期时间
+datetime.datetime.now() （当前datetime）
+time.localtime()  （当前struct_time）
+time.time()  （当前时间戳）
+time.localtime(time.time() - 24 * 3600)   （昨天的日期时间）
+time.strptime('2014/12/12', '%Y/%m/%d’)  （字符串 -> struct_time）
+time.localtime(ts)  （unix时间戳 -> struct_time）
+datetime.datetime.now().strftime(‘%Y-%m-%d’)  （当前日期字符串）
+
+网络
+req = urllib2.Request(url = url, data = data)  （HTTP请求）
+urllib2.urlopen(req).read()
+
+（设置默认编码
+解决UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误）
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8’)
+
+（以指定编码打开文件）
+f = codecs.open('out.txt', mode="w", encoding="utf-8”)
+
+（单步调试）
+pdb.set_trace()
+
+字符串处理
+re.match(pattern, string)   （匹配开头）
+re.search(pattern, string)   （匹配任意位置）
+re.findall(pattern, string)   （匹配全部）
+
+
+
+数据编码
+json.dumps(s)
+base64.b64encode(s)
+urllib.quote(str)
+urllib.unquote(str)
+binascii.b2a_hex(os.urandom(4))
+
+参数解析
+parser = argparse.ArgumentParser()
+parser.add_argument('--say_hello', dest="say_hello", action='store_true')
+parser.add_argument('--table', type=str, default='')
+args = parser.parse_args()
+
+调用动态库
+api = ctypes.CDLL('libfoo.so', DLFCN.RTLD_LAZY)
+api.foo.argtypes = [ctypes.c_char_p, ctypes.c_int]
+api.foo.restype = ctypes.c_int
+res = api.foo(msg, len(msg)
+
+美化显示
+pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(stuff)
+
+```
+
+```
