@@ -11,3 +11,6 @@ bundle install
 bundle exec jekyll serve
 ```
 
+#### 主题
+
+* [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes)
