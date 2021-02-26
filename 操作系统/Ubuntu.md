@@ -1,6 +1,11 @@
 #### 常用软件
-* Terminator终端
-* Monaco字体
+###### Terminator终端
+
+###### Monaco字体
+
+###### gThumb
+
+图片浏览、编辑；支持webp
 
 
 

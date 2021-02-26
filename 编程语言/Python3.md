@@ -7,10 +7,27 @@ make
 make install
 ```
 
+#### 参数解释
+
+```python
+import argparse
+parser = argparse.ArgumentParser()
+#--job或-j，整数类型，必需
+parser.add_argument('--job_id', '-j', type=int, required=True)
+args = parser.parse_args()
+print(args.job_id)
+```
+
+
+
 #### print中文问题
+
 ```python
 import codecs
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+
+# 显示unicode
+print(u'\u81f4\u547d\u9519\u8bef')
 ```
 
 #### 文件和目录
@@ -32,3 +49,14 @@ for root, dirs, files in os.walk(config.md_dir, followlinks=False):
 ```python
 print('\033[32m' + text + '\033[m')
 ```
+
+#### 网络请求
+
+```python
+import requests
+# form格式
+req = requests.post(url, data={'name': 'value'})
+# 获取应答
+print(req.text)
+```
+

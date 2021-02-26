@@ -10,7 +10,7 @@ tmux detach-client
 
 ## 配置文件
 
-```tmux
+```bash
 set -g prefix C-a
 
 set -g base-index         1     # 窗口编号从 1 开始计数
@@ -25,6 +25,11 @@ setw -g mode-keys         vi    # 进入复制模式的时候使用 vi 键位（
 
 ```
 
-```
+## 复制到剪切板
 
-```
+1. 按住`shift`，`鼠标左键`选择内容
+
+2. `Ctrl + Shift+C` 复制
+
+3. `Ctrl+V` 粘贴
+

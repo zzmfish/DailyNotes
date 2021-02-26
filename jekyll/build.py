@@ -5,11 +5,15 @@ import datetime
 import shutil
 
 jekyll_dir = os.path.dirname(__file__)
+os.chdir(jekyll_dir)
+os.system('rm -rvf _posts/* _site/')
 
 # 列出markdown文件
 file_list = []
 os.chdir(os.path.join(jekyll_dir, '..'))
 for root, dirs, files in os.walk('.'):
+    if root.startswith('./.'):
+        continue
     root = root.strip('./')
     if root.startswith('jekyll'):
         continue

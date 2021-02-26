@@ -1,12 +1,33 @@
+## 数据库
 
-## 库
+#### 库
+
 ```javascript
 //当前数据库：
 db
 db.getName()
 ```
+#### 集合
+```
+//重命名集合
+db.colname.renameCollection('new_name')
+```
 
-## 查找
+#### 索引
+```javascript
+//查看索引
+db.colname.getIndexes()
+
+//创建TTL索引
+db.colname.createIndex({"fieldname": 1},
+  { background: true,
+    expireAfterSeconds: 3600
+  }
+)
+```
+
+## 查询
+#### find
 ```javascript
 //时间范围：
 db.colname.find({fieldname: {$lt: new Date('2017-05-10')}})
@@ -33,7 +54,7 @@ db.colname.find().forEach(function(item) {
 })
 ```
 
-## 聚合
+#### aggregate
 ```javascript
 //北京时间日期
 col.aggregate([
@@ -50,18 +71,7 @@ col.aggregate([
 ])
 ```
 
-## 索引
-```javascript
-//查看索引
-db.colname.getIndexes()
 
-//创建TTL索引
-db.colname.createIndex({"fieldname": 1},
-  { background: true,
-    expireAfterSeconds: 3600
-  }
-)
-```
 
 
 ## 副本

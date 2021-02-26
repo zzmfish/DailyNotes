@@ -1,0 +1,1 @@
+* ](http://vbird.dic.ksu.edu.tw/linux_server/0140networkcommand/0140networkcommand-centos4.php)

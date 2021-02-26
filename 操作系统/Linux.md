@@ -48,7 +48,13 @@ ps --ppid $ppid
 ##### rsync
 ```bash
 # 通过ssh同步
-rsync -zvre "ssh -p $ssh_port" $local_dir $remote_user@$rename_host:$remote_dir
+# -l：保留符号链接
+# --delete：删除目标目录多余的文件
+rsync -zvre "ssh -p $ssh_port" \
+    -l \
+    --exclude=$exclude_dir \
+    $local_dir \
+    $remote_user@$rename_host:$remote_dir
 ```
 
 ##### sed
@@ -95,3 +101,112 @@ tar czvf scenarios20201203.tgz \
 unzip -l $file_name
 ```
 
+
+
+#### 用户管理
+
+```bash
+#添加用户：-m创建家目录 -s设置shell
+useradd -m -s /bin/bash $user_name
+
+#加入到组
+usermod -aG $group_name $user_name
+
+#重新登录（groups生效）
+su - $USER
+
+#设置sudo权限
+echo "$user_name ALL=(ALL) ALL" >  /etc/sudoers.d/$user_name
+
+#重设root密码
+passwd root
+
+#删除用户
+userdel $user_name
+```
+
+
+
+### 网络命令
+
+###### netstat
+
+```bash
+#查看监听的端口
+#-l: 只显示监听端口
+#-n: 显示数字地址
+#-p: 显示程序pid和文件名
+#--inet: 只显示TCP/IP连接
+netstat -lnp --inet
+
+
+#显示协议统计信息
+netstat -s
+```
+
+###### traceroute
+
+```
+#!bash
+#*表示收不到ICMP回声
+traceroute www.baidu.com
+```
+
+###### DNS相关
+
+```
+#!bash
+host www.baidu.com
+nslookup www.baidu.com
+dig www.baidu.com
+```
+
+###### IP地址
+
+```bash
+# 显示IP地址
+ip addr show
+
+# 显示docker容器的ip地址
+ip addr show docker0
+```
+
+###### HTTP
+
+```
+#!bash
+#只显示header
+curl --head http://www.baidu.com
+
+#post数据
+curl --data 'DATA' http://localhost:8366/video/add
+
+#显示跳转地址
+curl -Ls -o /dev/null -w %{url_effective} http://google.com
+
+#断点续传
+wget -c http://www.baidu.com/file.tgz
+```
+
+###### iptables
+
+```
+#!bash
+#显示所有端口限制
+sudo iptables -L -n
+```
+
+#### ICMP
+
+```
+#!bash
+#看ping的来源ip
+tcpdump -i eth1 icmp and icmp[icmptype]=icmp-echo
+```
+
+### 流量监控
+
+```
+#!bash
+dstat -nf 
+```

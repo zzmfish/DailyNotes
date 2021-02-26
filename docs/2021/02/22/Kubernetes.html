@@ -1,0 +1,278 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Kubernetes - 每日笔记</title>
+<meta name="description" content="概述">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="每日笔记">
+<meta property="og:title" content="Kubernetes">
+<meta property="og:url" content="https://zzmfish.github.io/DailyNotes/2021/02/22/Kubernetes.html">
+
+
+  <meta property="og:description" content="概述">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-02-22T00:00:00+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://zzmfish.github.io/DailyNotes/2021/02/22/Kubernetes.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://zzmfish.github.io/DailyNotes/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/DailyNotes/feed.xml" type="application/atom+xml" rel="alternate" title="每日笔记 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/DailyNotes/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--post">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/DailyNotes/">
+          ✍每日笔记
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Kubernetes</h1>
+    
+    <h2 id="概述">概述</h2>
+
+<h4 id="是什么">是什么</h4>
+
+<p>管理容器化的工作负载和服务的的开源平台</p>
+
+<h4 id="组件">组件</h4>
+
+<p>一个K8s<code class="language-plaintext highlighter-rouge">集群</code>由一组机器组成</p>
+
+<p><code class="language-plaintext highlighter-rouge">Node</code>表示一个机器</p>
+
+<p><code class="language-plaintext highlighter-rouge">Pod</code>表示一个应用负载</p>
+
+<p><code class="language-plaintext highlighter-rouge">Control Plane</code>管理集群的Node和Pod</p>
+
+<h6 id="control-plane-组件">Control Plane 组件</h6>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">kube-apiserver</code>: 公开了 Kubernetes API</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">etcd</code>: 保存集群数据的键值数据库</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">kube-scheduler</code>: 为新创建的Pod选择运行的Node</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">kube-controller-manager</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">cloud-controller-manager</code>: 特定云平台的控制组建</p>
+  </li>
+</ul>
+
+<h6 id="node-组件">Node 组件</h6>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">kubelet</code>: 保证容器都运行在 Pod 中</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">kube-proxy</code>: 维护节点的网络规则</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Container Runtime</code>: 负责运行容器的软件（如Docker）</p>
+  </li>
+</ul>
+
+<h2 id="入门">入门</h2>
+
+<h4 id="minikube">minikube</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 启动minikube</span>
+minikube start
+
+<span class="c"># 显示节点IP地址</span>
+minikube ip
+
+<span class="c"># 打开仪表板</span>
+minikube dashboard
+
+<span class="c"># 停止minukube</span>
+minikube stop
+</code></pre></div></div>
+
+<h4 id="kubectl">kubectl</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 部署应用</span>
+kubectl create deployment simulation <span class="nt">--image</span><span class="o">=</span>simulation:v1
+
+<span class="c"># 删除应用</span>
+kubectl delete <span class="nt">-n</span> default deployment simulation
+
+<span class="c"># 获取pods</span>
+kubectl get pods
+
+<span class="c"># api-server代理</span>
+kubectl proxy <span class="nt">--address</span><span class="o">=</span>0.0.0.0 <span class="nt">--accept-hosts</span><span class="o">=</span>.<span class="k">*</span>
+</code></pre></div></div>
+
+
+
+
+
+  </div>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/DailyNotes/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 每日笔记. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/DailyNotes/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

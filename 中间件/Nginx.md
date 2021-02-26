@@ -20,6 +20,10 @@ http {
     # 上传大小限制
     client_max_body_size 8M;
     client_body_buffer_size 128k;
+    
+    # 列出目录文件
+    autoindex on;
+    charset utf-8;
 
     server {
         listen  80;

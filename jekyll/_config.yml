@@ -34,9 +34,20 @@ url: "https://zzmfish.github.io" # the base hostname & protocol for your site, e
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-include-cache
 
 minima:
   skin: solarized
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      show_date: true
+
 
 
 # Exclude from processing.
