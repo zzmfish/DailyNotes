@@ -23,3 +23,8 @@ bundle exec jekyll serve
 </script>
 ```
 
+#### 文档
+
+* [Posts](https://jekyllrb.com/docs/posts/)
+* [Pages](https://jekyllrb.com/docs/pages/)
+* [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)

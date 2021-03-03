@@ -4,19 +4,7 @@ sys.setdefaultencoding('utf-8')
 ```
 
 日志
-（输出日志到文件）
-logging.basicConfig(filename='example.log', format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
-logger = logging.getLogger()
-logger.addHandler(logging.StreamHandler(sys.stdout))
-logger.setLevel(logging.DEBUG)
-
-（根据日期切换日志文件）
-logging.basicConfig()
-file_handler = logging.handlers.TimedRotatingFileHandler("video.log", 'MIDNIGHT')
-file_handler.formatter = logging.Formatter('%(asctime)s %(message)s’)
-logger = logging.getLogger()
-logger.addHandler(file_handler)
 
 日期时间
 datetime.datetime.now() （当前datetime）

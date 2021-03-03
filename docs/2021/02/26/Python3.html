@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="每日笔记">
 <meta property="og:title" content="Python3">
-<meta property="og:url" content="https://zzmfish.github.io/DailyNotes/2021/02/25/Python3.html">
+<meta property="og:url" content="/DailyNotes/2021/02/26/Python3.html">
 
 
   <meta property="og:description" content="编译安装 sudo apt install libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev ./configure --prefix=$prefix  #打开config.log查找ssl、ffi是否成功 make make install">
@@ -29,14 +29,14 @@
 
 
 
-  <meta property="article:published_time" content="2021-02-25T00:00:00+08:00">
+  <meta property="article:published_time" content="2021-02-26T00:00:00+08:00">
 
 
 
 
 
 
-<link rel="canonical" href="https://zzmfish.github.io/DailyNotes/2021/02/25/Python3.html">
+<link rel="canonical" href="/DailyNotes/2021/02/26/Python3.html">
 
 
 
@@ -47,7 +47,7 @@
     
       "@type": "Person",
       "name": null,
-      "url": "https://zzmfish.github.io/DailyNotes/"
+      "url": "/DailyNotes/"
     
   }
 </script>
@@ -125,6 +125,13 @@
         </a>
         <ul class="visible-links"></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
@@ -165,6 +172,23 @@ make <span class="nb">install</span>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">job_id</span><span class="p">)</span>
 </code></pre></div></div>
+
+<h4 id="日志输出">日志输出</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 输出日志到文件
+</span><span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'example.log'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'%(levelname)s:%(message)s'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="c1"># 输出日志到终端
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">))</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># 根据日期切换日志文件
+</span><span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">()</span>
+<span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">handlers</span><span class="p">.</span><span class="n">TimedRotatingFileHandler</span><span class="p">(</span><span class="s">"video.log"</span><span class="p">,</span> <span class="s">'MIDNIGHT'</span><span class="p">)</span>
+<span class="n">file_handler</span><span class="p">.</span><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'%(asctime)s %(message)s’)
+logger = logging.getLogger()
+logger.addHandler(file_handler)
+</span></code></pre></div></div>
 
 <h4 id="print中文问题">print中文问题</h4>
 
@@ -212,6 +236,17 @@ make <span class="nb">install</span>
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -238,6 +273,10 @@ make <span class="nb">install</span>
 
 
 
+
+<script src="/DailyNotes/assets/js/lunr/lunr.min.js"></script>
+<script src="/DailyNotes/assets/js/lunr/lunr-store.js"></script>
+<script src="/DailyNotes/assets/js/lunr/lunr-en.js"></script>
 
 
 

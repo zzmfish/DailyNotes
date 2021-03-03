@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://zzmfish.github.io/DailyNotes/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zzmfish.github.io/DailyNotes/" rel="alternate" type="text/html" /><updated>2021-02-25T18:02:28+08:00</updated><id>https://zzmfish.github.io/DailyNotes/feed.xml</id><title type="html">每日笔记</title><entry><title type="html">Docker</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/25/Docker.html" rel="alternate" type="text/html" title="Docker" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/25/Docker</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/25/Docker.html">&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/DailyNotes/feed.xml" rel="self" type="application/atom+xml" /><link href="/DailyNotes/" rel="alternate" type="text/html" /><updated>2021-03-02T21:32:01+08:00</updated><id>/DailyNotes/feed.xml</id><title type="html">每日笔记</title><entry><title type="html">Jekyll</title><link href="/DailyNotes/2021/03/02/Jekyll.html" rel="alternate" type="text/html" title="Jekyll" /><published>2021-03-02T00:00:00+08:00</published><updated>2021-03-02T00:00:00+08:00</updated><id>/DailyNotes/2021/03/02/Jekyll</id><content type="html" xml:base="/DailyNotes/2021/03/02/Jekyll.html">&lt;h4 id=&quot;命令&quot;&gt;命令&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 新建一个网站&lt;/span&gt;
+jekyll new jekyll
+
+&lt;span class=&quot;c&quot;&gt;# 修改Gemfile之后要更新&lt;/span&gt;
+bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 启动localhost:4000服务&lt;/span&gt;
+bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;主题&quot;&gt;主题&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;Minima&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;显示数学公式&quot;&gt;显示数学公式&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;文档&quot;&gt;文档&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;Posts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/pages/&quot;&gt;Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">命令 ```bash 新建一个网站 jekyll new jekyll</summary></entry><entry><title type="html">Python2</title><link href="/DailyNotes/2021/02/26/Python2.html" rel="alternate" type="text/html" title="Python2" /><published>2021-02-26T00:00:00+08:00</published><updated>2021-02-26T00:00:00+08:00</updated><id>/DailyNotes/2021/02/26/Python2</id><content type="html" xml:base="/DailyNotes/2021/02/26/Python2.html">&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;reload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setdefaultencoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;utf-8&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;日志&lt;/p&gt;
+
+&lt;p&gt;日期时间
+datetime.datetime.now() （当前datetime）
+time.localtime()  （当前struct_time）
+time.time()  （当前时间戳）
+time.localtime(time.time() - 24 * 3600)   （昨天的日期时间）
+time.strptime(‘2014/12/12’, ‘%Y/%m/%d’)  （字符串 -&amp;gt; struct_time）
+time.localtime(ts)  （unix时间戳 -&amp;gt; struct_time）
+datetime.datetime.now().strftime(‘%Y-%m-%d’)  （当前日期字符串）&lt;/p&gt;
+
+&lt;p&gt;网络
+req = urllib2.Request(url = url, data = data)  （HTTP请求）
+urllib2.urlopen(req).read()&lt;/p&gt;
+
+&lt;p&gt;（设置默认编码
+解决UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误）
+import sys
+reload(sys)
+sys.setdefaultencoding(‘utf8’)&lt;/p&gt;
+
+&lt;p&gt;（以指定编码打开文件）
+f = codecs.open(‘out.txt’, mode=”w”, encoding=”utf-8”)&lt;/p&gt;
+
+&lt;p&gt;（单步调试）
+pdb.set_trace()&lt;/p&gt;
+
+&lt;p&gt;字符串处理
+re.match(pattern, string)   （匹配开头）
+re.search(pattern, string)   （匹配任意位置）
+re.findall(pattern, string)   （匹配全部）&lt;/p&gt;
+
+&lt;p&gt;数据编码
+json.dumps(s)
+base64.b64encode(s)
+urllib.quote(str)
+urllib.unquote(str)
+binascii.b2a_hex(os.urandom(4))&lt;/p&gt;
+
+&lt;p&gt;参数解析
+parser = argparse.ArgumentParser()
+parser.add_argument(‘–say_hello’, dest=”say_hello”, action=’store_true’)
+parser.add_argument(‘–table’, type=str, default=’’)
+args = parser.parse_args()&lt;/p&gt;
+
+&lt;p&gt;调用动态库
+api = ctypes.CDLL(‘libfoo.so’, DLFCN.RTLD_LAZY)
+api.foo.argtypes = [ctypes.c_char_p, ctypes.c_int]
+api.foo.restype = ctypes.c_int
+res = api.foo(msg, len(msg)&lt;/p&gt;
+
+&lt;p&gt;美化显示
+pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(stuff)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">reload(sys) sys.setdefaultencoding(&apos;utf-8&apos;)</summary></entry><entry><title type="html">Python3</title><link href="/DailyNotes/2021/02/26/Python3.html" rel="alternate" type="text/html" title="Python3" /><published>2021-02-26T00:00:00+08:00</published><updated>2021-02-26T00:00:00+08:00</updated><id>/DailyNotes/2021/02/26/Python3</id><content type="html" xml:base="/DailyNotes/2021/02/26/Python3.html">&lt;h4 id=&quot;编译安装&quot;&gt;编译安装&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev
+./configure &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$prefix&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#打开config.log查找ssl、ffi是否成功&lt;/span&gt;
+make
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;参数解释&quot;&gt;参数解释&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;argparse&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argparse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArgumentParser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#--job或-j，整数类型，必需
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;--job_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;-j&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;job_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;日志输出&quot;&gt;日志输出&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# 输出日志到文件
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basicConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;example.log&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;%(levelname)s:%(message)s&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;level&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 输出日志到终端
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StreamHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 根据日期切换日志文件
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basicConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;file_handler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimedRotatingFileHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;video.log&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;MIDNIGHT&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;file_handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Formatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;%(asctime)s %(message)s’)
+logger = logging.getLogger()
+logger.addHandler(file_handler)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;print中文问题&quot;&gt;print中文问题&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;codecs&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;codecs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getwriter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 显示unicode
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u81f4\u547d\u9519\u8bef&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;文件和目录&quot;&gt;文件和目录&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;makedirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# 递归创建目录
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# 列出目录内容
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getmtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 获得文件修改时间
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;*/*.gif&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;# 列出匹配的文件
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 递归遍历目录下的文件
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;md_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;followlinks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;显示颜色&quot;&gt;显示颜色&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\033&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[32m&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\033&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[m&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;网络请求&quot;&gt;网络请求&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# form格式
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;name&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;value&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 获取应答
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">编译安装 sudo apt install libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev ./configure --prefix=$prefix #打开config.log查找ssl、ffi是否成功 make make install</summary></entry><entry><title type="html">Docker</title><link href="/DailyNotes/2021/02/25/Docker.html" rel="alternate" type="text/html" title="Docker" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>/DailyNotes/2021/02/25/Docker</id><content type="html" xml:base="/DailyNotes/2021/02/25/Docker.html">&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
 &lt;h4 id=&quot;数据存放位置镜像容器&quot;&gt;数据存放位置（镜像、容器）&lt;/h4&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/var/lib/docker
@@ -140,7 +299,7 @@ docker tag &lt;span class=&quot;nv&quot;&gt;$image_id&lt;/span&gt; &lt;span clas
 &lt;h6 id=&quot;unpause&quot;&gt;unpause&lt;/h6&gt;
 &lt;h6 id=&quot;update&quot;&gt;update&lt;/h6&gt;
 &lt;h6 id=&quot;version&quot;&gt;version&lt;/h6&gt;
-&lt;h6 id=&quot;wait&quot;&gt;wait&lt;/h6&gt;</content><author><name></name></author><summary type="html">问题 数据存放位置（镜像、容器）</summary></entry><entry><title type="html">Linux</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/25/Linux.html" rel="alternate" type="text/html" title="Linux" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/25/Linux</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/25/Linux.html">&lt;h3 id=&quot;常用命令&quot;&gt;常用命令&lt;/h3&gt;
+&lt;h6 id=&quot;wait&quot;&gt;wait&lt;/h6&gt;</content><author><name></name></author><summary type="html">问题 数据存放位置（镜像、容器）</summary></entry><entry><title type="html">Linux</title><link href="/DailyNotes/2021/02/25/Linux.html" rel="alternate" type="text/html" title="Linux" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>/DailyNotes/2021/02/25/Linux</id><content type="html" xml:base="/DailyNotes/2021/02/25/Linux.html">&lt;h3 id=&quot;常用命令&quot;&gt;常用命令&lt;/h3&gt;
 
 &lt;h5 id=&quot;crontab&quot;&gt;crontab&lt;/h5&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 添加crontab&lt;/span&gt;
@@ -323,60 +482,9 @@ tcpdump -i eth1 icmp and icmp[icmptype]=icmp-echo
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!bash
 dstat -nf 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">常用命令</summary></entry><entry><title type="html">Linux命令</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4.html" rel="alternate" type="text/html" title="Linux命令" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4.html">&lt;ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">常用命令</summary></entry><entry><title type="html">Linux命令</title><link href="/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4.html" rel="alternate" type="text/html" title="Linux命令" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4</id><content type="html" xml:base="/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4.html">&lt;ul&gt;
   &lt;li&gt;](http://vbird.dic.ksu.edu.tw/linux_server/0140networkcommand/0140networkcommand-centos4.php)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">](http://vbird.dic.ksu.edu.tw/linux_server/0140networkcommand/0140networkcommand-centos4.php)</summary></entry><entry><title type="html">Python3</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/25/Python3.html" rel="alternate" type="text/html" title="Python3" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/25/Python3</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/25/Python3.html">&lt;h4 id=&quot;编译安装&quot;&gt;编译安装&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev
-./configure &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$prefix&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#打开config.log查找ssl、ffi是否成功&lt;/span&gt;
-make
-make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;参数解释&quot;&gt;参数解释&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;argparse&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argparse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArgumentParser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#--job或-j，整数类型，必需
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;--job_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;-j&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;job_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;print中文问题&quot;&gt;print中文问题&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;codecs&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;codecs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getwriter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 显示unicode
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u81f4\u547d\u9519\u8bef&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;文件和目录&quot;&gt;文件和目录&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;makedirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# 递归创建目录
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# 列出目录内容
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getmtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 获得文件修改时间
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;*/*.gif&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;# 列出匹配的文件
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 递归遍历目录下的文件
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;md_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;followlinks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;显示颜色&quot;&gt;显示颜色&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\033&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[32m&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\033&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[m&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;网络请求&quot;&gt;网络请求&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# form格式
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;name&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;value&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 获取应答
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">编译安装 sudo apt install libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev ./configure --prefix=$prefix #打开config.log查找ssl、ffi是否成功 make make install</summary></entry><entry><title type="html">Git</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/24/Git.html" rel="alternate" type="text/html" title="Git" /><published>2021-02-24T00:00:00+08:00</published><updated>2021-02-24T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/24/Git</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/24/Git.html">&lt;h3 id=&quot;主要命令&quot;&gt;主要命令&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">](http://vbird.dic.ksu.edu.tw/linux_server/0140networkcommand/0140networkcommand-centos4.php)</summary></entry><entry><title type="html">Git</title><link href="/DailyNotes/2021/02/24/Git.html" rel="alternate" type="text/html" title="Git" /><published>2021-02-24T00:00:00+08:00</published><updated>2021-02-24T00:00:00+08:00</updated><id>/DailyNotes/2021/02/24/Git</id><content type="html" xml:base="/DailyNotes/2021/02/24/Git.html">&lt;h3 id=&quot;主要命令&quot;&gt;主要命令&lt;/h3&gt;
 
 &lt;h5 id=&quot;add&quot;&gt;add&lt;/h5&gt;
 &lt;h5 id=&quot;apply&quot;&gt;apply&lt;/h5&gt;
@@ -562,7 +670,7 @@ git ls-files &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; | xargs &lt;span c
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#显示当前所属分支&lt;/span&gt;
 git symbolic-ref &lt;span class=&quot;nt&quot;&gt;--short&lt;/span&gt; HEAD
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">主要命令</summary></entry><entry><title type="html">Tmux</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/23/Tmux.html" rel="alternate" type="text/html" title="Tmux" /><published>2021-02-23T00:00:00+08:00</published><updated>2021-02-23T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/23/Tmux</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/23/Tmux.html">&lt;h2 id=&quot;命令&quot;&gt;命令&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">主要命令</summary></entry><entry><title type="html">Tmux</title><link href="/DailyNotes/2021/02/23/Tmux.html" rel="alternate" type="text/html" title="Tmux" /><published>2021-02-23T00:00:00+08:00</published><updated>2021-02-23T00:00:00+08:00</updated><id>/DailyNotes/2021/02/23/Tmux</id><content type="html" xml:base="/DailyNotes/2021/02/23/Tmux.html">&lt;h2 id=&quot;命令&quot;&gt;命令&lt;/h2&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tmux new-session &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$session_name&lt;/span&gt;
 tmux list-sessions
 tmux attach &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$session_name&lt;/span&gt;
@@ -599,7 +707,7 @@ setw &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; mode-keys         vi    &l
   &lt;li&gt;
     &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+V&lt;/code&gt; 粘贴&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">命令 ```bash tmux new-session -s $session_name tmux list-sessions tmux attach -t $session_name</summary></entry><entry><title type="html">Kubernetes</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/22/Kubernetes.html" rel="alternate" type="text/html" title="Kubernetes" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/22/Kubernetes</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/22/Kubernetes.html">&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">命令 ```bash tmux new-session -s $session_name tmux list-sessions tmux attach -t $session_name</summary></entry><entry><title type="html">Kubernetes</title><link href="/DailyNotes/2021/02/22/Kubernetes.html" rel="alternate" type="text/html" title="Kubernetes" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>/DailyNotes/2021/02/22/Kubernetes</id><content type="html" xml:base="/DailyNotes/2021/02/22/Kubernetes.html">&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
 
 &lt;h4 id=&quot;是什么&quot;&gt;是什么&lt;/h4&gt;
 
@@ -679,7 +787,7 @@ kubectl get pods
 
 &lt;span class=&quot;c&quot;&gt;# api-server代理&lt;/span&gt;
 kubectl proxy &lt;span class=&quot;nt&quot;&gt;--address&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.0.0.0 &lt;span class=&quot;nt&quot;&gt;--accept-hosts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">概述</summary></entry><entry><title type="html">Nginx</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/22/Nginx.html" rel="alternate" type="text/html" title="Nginx" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/22/Nginx</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/22/Nginx.html">&lt;h4 id=&quot;命令&quot;&gt;命令&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">概述</summary></entry><entry><title type="html">Nginx</title><link href="/DailyNotes/2021/02/22/Nginx.html" rel="alternate" type="text/html" title="Nginx" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>/DailyNotes/2021/02/22/Nginx</id><content type="html" xml:base="/DailyNotes/2021/02/22/Nginx.html">&lt;h4 id=&quot;命令&quot;&gt;命令&lt;/h4&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nginx
 nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; quit
 nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; reload
@@ -720,97 +828,4 @@ nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; reload
 &lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">命令 nginx nginx -s quit nginx -s reload</summary></entry><entry><title type="html">PostgreSQL</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/22/PostgreSQL.html" rel="alternate" type="text/html" title="PostgreSQL" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/22/PostgreSQL</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/22/PostgreSQL.html">&lt;p&gt;&lt;img src=&quot;http://8.134.51.249/images/PostgreSQL.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
-
-&lt;h4 id=&quot;初始化&quot;&gt;初始化&lt;/h4&gt;
-&lt;p&gt;安装完毕后，系统会创建一个数据库超级用户 postgres，密码为空。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; postgres
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这时使用以下命令进入 postgres，输出以下信息，说明安装成功：&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~$ psql
-psql (9.5.17)
-Type &quot;help&quot; for help.
-
-postgres=#
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;为postgres用户设置一个密码。&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\password postgres
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;输入以下命令退出 PostgreSQL 提示符：&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\q
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;允许远程访问&quot;&gt;允许远程访问&lt;/h4&gt;
-
-&lt;p&gt;编辑 &lt;em&gt;/etc/postgresql/13/main/postgresql.conf&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#listen_addresses = &apos;localhost&apos;
-listen_addresses = &apos;*&apos;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;编辑 &lt;em&gt;/etc/postgresql/13/main/pg_hba.conf&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# IPv4 local connections:
-#host    all             all             127.0.0.1/32            md5
-host    all             all             0.0.0.0/0            md5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;重启防火墙和数据库:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ufw allow 5432/tcp
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart postgresql
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;数据库操作&quot;&gt;数据库操作&lt;/h2&gt;
-
-&lt;h6 id=&quot;查看已经存在的数据库&quot;&gt;查看已经存在的数据库：&lt;/h6&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\l
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;进入数据库&quot;&gt;进入数据库：&lt;/h6&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\c dbname
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;查看所有表格&quot;&gt;查看所有表格&lt;/h6&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\d
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h6 id=&quot;查看表格信息&quot;&gt;查看表格信息&lt;/h6&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\d table_name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;sql命令&quot;&gt;SQL命令&lt;/h2&gt;
-
-&lt;h4 id=&quot;表&quot;&gt;表&lt;/h4&gt;
-&lt;h6 id=&quot;alter-table&quot;&gt;ALTER TABLE&lt;/h6&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- 增加列&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;column_name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;--重命名列&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RENAME&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLUMN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;column_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;索引&quot;&gt;索引&lt;/h4&gt;
-&lt;h6 id=&quot;create-index&quot;&gt;CREATE INDEX&lt;/h6&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- 唯一索引&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;UNIQUE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index_name&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table_name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;column_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;python&quot;&gt;Python&lt;/h2&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;psycopg2&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psycopg2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">中国省市县级区行政地图</title><link href="https://zzmfish.github.io/DailyNotes/2021/02/22/%E4%B8%AD%E5%9B%BD%E7%9C%81%E5%B8%82%E5%8E%BF%E7%BA%A7%E5%8C%BA%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%9B%BE.html" rel="alternate" type="text/html" title="中国省市县级区行政地图" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>https://zzmfish.github.io/DailyNotes/2021/02/22/%E4%B8%AD%E5%9B%BD%E7%9C%81%E5%B8%82%E5%8E%BF%E7%BA%A7%E5%8C%BA%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%9B%BE</id><content type="html" xml:base="https://zzmfish.github.io/DailyNotes/2021/02/22/%E4%B8%AD%E5%9B%BD%E7%9C%81%E5%B8%82%E5%8E%BF%E7%BA%A7%E5%8C%BA%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%9B%BE.html">&lt;p&gt;&lt;img src=&quot;http://8.134.51.249/DailyNotes/assets/images/%E4%B8%AD%E5%9B%BD%E7%9C%81%E5%B8%82%E5%8E%BF%E7%BA%A7%E5%8C%BA%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%9B%BE.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">命令 nginx nginx -s quit nginx -s reload</summary></entry></feed>
