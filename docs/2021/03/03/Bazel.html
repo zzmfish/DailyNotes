@@ -1,0 +1,424 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Bazel - 每日笔记</title>
+<meta name="description" content="概念">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="每日笔记">
+<meta property="og:title" content="Bazel">
+<meta property="og:url" content="/DailyNotes/2021/03/03/Bazel.html">
+
+
+  <meta property="og:description" content="概念">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-03-03T00:00:00+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="/DailyNotes/2021/03/03/Bazel.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "/DailyNotes/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/DailyNotes/feed.xml" type="application/atom+xml" rel="alternate" title="每日笔记 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/DailyNotes/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--posts">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/DailyNotes/">
+          ✍每日笔记
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/DailyNotes/tags.html">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Bazel</h1>
+    
+    <div style="position: relative;">
+  <h2 id="概念">概念</h2>
+
+<h4 id="workspace">Workspace</h4>
+
+<ul>
+  <li>包含软件<code class="language-plaintext highlighter-rouge">源代码</code></li>
+  <li>包含<code class="language-plaintext highlighter-rouge">输出目录</code>的符号链接</li>
+  <li>包含<code class="language-plaintext highlighter-rouge">WORKSPACE文件</code>指明外部依赖</li>
+  <li>包含WORKSPACE文件的目录是workspace的<code class="language-plaintext highlighter-rouge">根目录</code></li>
+  <li>忽略子目录的WORKSPACE文件</li>
+  <li>可以是<code class="language-plaintext highlighter-rouge">WORKSPACE.bazel</code></li>
+</ul>
+
+<h4 id="repositories">Repositories</h4>
+
+<ul>
+  <li>仓库用来<code class="language-plaintext highlighter-rouge">组织代码</code></li>
+  <li>根目录又称<code class="language-plaintext highlighter-rouge">主仓库</code>或<code class="language-plaintext highlighter-rouge">@</code></li>
+  <li><code class="language-plaintext highlighter-rouge">外部仓库</code>（external）在WORKSPACE中定义</li>
+</ul>
+
+<h4 id="packages">Packages</h4>
+
+<ul>
+  <li>目录包含<code class="language-plaintext highlighter-rouge">BUILD</code>或<code class="language-plaintext highlighter-rouge">BUILD.bazel</code>文件</li>
+  <li><code class="language-plaintext highlighter-rouge">文件</code>和<code class="language-plaintext highlighter-rouge">依赖关系</code>的集合</li>
+</ul>
+
+<h4 id="targets">Targets</h4>
+
+<ul>
+  <li>package包含的元素，主要是<code class="language-plaintext highlighter-rouge">文件</code>或<code class="language-plaintext highlighter-rouge">规则</code></li>
+</ul>
+
+<h4 id="labels">Labels</h4>
+
+<p>target的名称，格式为<code class="language-plaintext highlighter-rouge">@repositrory_name//package_name:target_name</code>：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@myrepo//my/app/main:app_binary
+//my/app/main:app_binary    #同一个仓库
+//my/app:app
+//my/app     #同上
+</code></pre></div></div>
+
+<h4 id="rules">Rules</h4>
+
+<ul>
+  <li>指明输入文件和输出文件的关系</li>
+  <li>生成输出文件的步骤</li>
+</ul>
+
+<h2 id="workspace规则">WORKSPACE规则</h2>
+
+<p>Workspace规则主要用来解决外部依赖</p>
+
+<h4 id="bind">bind</h4>
+
+<p>在//external中为目标指定一个别名。不推荐使用。</p>
+
+<h4 id="local_repository">local_repository</h4>
+
+<p>引用其他目录中的目标</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local_repository(
+    name = "my-ssl",
+    path = "/home/user/ssl",
+)
+</code></pre></div></div>
+
+<p>可以指定<code class="language-plaintext highlighter-rouge">@my-ssl//src:openssl-lib</code>作为这个库的依赖。</p>
+
+<h4 id="new_local_repository">new_local_repository</h4>
+
+<p>把本地目录变成一个Bazel仓库。</p>
+
+<p>比如聊天app代码目录在<em>/chat-app</em>，要用的SSL库在<em>～/ssl</em>。</p>
+
+<p>1、添加<em>~/chat-app/BUILD.my-ssl</em>：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java_library(
+    name = "openssl",
+    srcs = glob(['*.java'])
+    visibility = ["//visibility:public"],
+)
+</code></pre></div></div>
+
+<p>2、在~/chat-app/WORKSPACE加上：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new_local_repository(
+    name = "my-ssl",
+    path = "/home/user/ssl",
+    build_file = "BUILD.my-ssl",
+)
+</code></pre></div></div>
+
+<p>然后就可以把<code class="language-plaintext highlighter-rouge">@my-ssl//:openssl</code>添加到目标的依赖。</p>
+
+<h2 id="build文件">BUILD文件</h2>
+
+<h2 id="cc规则">C/C++规则</h2>
+
+<h4 id="cc_binary">cc_binary</h4>
+
+<pre><code class="language-bazel">cc_binary(
+    name = "hello-world",
+    srcs = ["hello-world.cc"],
+)
+</code></pre>
+
+<h4 id="cc_import">cc_import</h4>
+
+<h4 id="cc_library">cc_library</h4>
+
+<h4 id="cc_proto_library">cc_proto_library</h4>
+
+<h4 id="fdo_prefetch_hints">fdo_prefetch_hints</h4>
+
+<h4 id="fdo_profile">fdo_profile</h4>
+
+<h4 id="propeller_optimize">propeller_optimize</h4>
+
+<h4 id="cc_test">cc_test</h4>
+
+<h4 id="cc_toolchain">cc_toolchain</h4>
+
+<h4 id="cc_toolchain_suite">cc_toolchain_suite</h4>
+
+<h2 id="文档链接">文档链接</h2>
+
+<ul>
+  <li><a href="https://docs.bazel.build/versions/master/build-ref.html">Concepts and Terminology</a></li>
+  <li><a href="https://docs.bazel.build/versions/master/be/workspace.html">Workspace Rules</a></li>
+</ul>
+
+
+  <aside class="sidebar__right ">
+    <nav class="toc">
+      <header><h4 class="nav__title">Tags</h4></header>
+      <ul class="toc__menu">
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#linux'>linux <small style="font-weight: normal;">(8)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#开发工具'>开发工具 <small style="font-weight: normal;">(4)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#编程语言'>编程语言 <small style="font-weight: normal;">(5)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#web开发'>web开发 <small style="font-weight: normal;">(3)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#中间件'>中间件 <small style="font-weight: normal;">(3)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#网络'>网络 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#数据库'>数据库 <small style="font-weight: normal;">(4)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#读书'>读书 <small style="font-weight: normal;">(9)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#个人提升'>个人提升 <small style="font-weight: normal;">(5)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#思维导图'>思维导图 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#大数据'>大数据 <small style="font-weight: normal;">(1)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#自动驾驶'>自动驾驶 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#windows'>windows <small style="font-weight: normal;">(1)</small></a></li>
+        
+      </ul>
+    </nav>
+  </aside>
+
+  <div>
+    <small>
+    
+      <a href='/DailyNotes/tags.html#开发工具'>🔖开发工具</a>&nbsp;
+    
+    </small>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/DailyNotes/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 每日笔记. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/DailyNotes/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/DailyNotes/assets/js/lunr/lunr.min.js"></script>
+<script src="/DailyNotes/assets/js/lunr/lunr-store.js"></script>
+<script src="/DailyNotes/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

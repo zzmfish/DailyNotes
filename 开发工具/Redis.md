@@ -1,4 +1,9 @@
+---
+tags: 数据库
+---
+
 ## 命令
+
 #### 运行
 ```bash
 redis-server

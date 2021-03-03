@@ -1,4 +1,11 @@
+---
+tags: 编程语言 Web开发
+---
+
+
+
 #### 基础数据类型
+
 ```js
 //获取object的keys
 Object.keys(obj)

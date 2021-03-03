@@ -1,4 +1,9 @@
+---
+tags: 开发工具 Web开发
+---
+
 #### 命令
+
 ```bash
 # 新建一个网站
 jekyll new jekyll

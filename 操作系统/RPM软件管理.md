@@ -1,4 +1,9 @@
+---
+tags: Linux
+---
+
 #### RPM软件管理
+
 ```bash
 #安装软件包
 rpm -i $rpm_file

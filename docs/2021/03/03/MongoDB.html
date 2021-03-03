@@ -1,0 +1,471 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>MongoDB - 每日笔记</title>
+<meta name="description" content="数据库">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="每日笔记">
+<meta property="og:title" content="MongoDB">
+<meta property="og:url" content="/DailyNotes/2021/03/03/MongoDB.html">
+
+
+  <meta property="og:description" content="数据库">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-03-03T00:00:00+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="/DailyNotes/2021/03/03/MongoDB.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "/DailyNotes/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/DailyNotes/feed.xml" type="application/atom+xml" rel="alternate" title="每日笔记 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/DailyNotes/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--posts">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/DailyNotes/">
+          ✍每日笔记
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/DailyNotes/tags.html">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">MongoDB</h1>
+    
+    <div style="position: relative;">
+  <h2 id="数据库">数据库</h2>
+
+<h4 id="库">库</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//当前数据库：</span>
+<span class="nx">db</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span>
+</code></pre></div></div>
+<h4 id="集合">集合</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//重命名集合
+db.colname.renameCollection('new_name')
+</code></pre></div></div>
+
+<h4 id="索引">索引</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//查看索引</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">colname</span><span class="p">.</span><span class="nx">getIndexes</span><span class="p">()</span>
+
+<span class="c1">//创建TTL索引</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">colname</span><span class="p">.</span><span class="nx">createIndex</span><span class="p">({</span><span class="dl">"</span><span class="s2">fieldname</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+  <span class="p">{</span> <span class="na">background</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">expireAfterSeconds</span><span class="p">:</span> <span class="mi">3600</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="查询">查询</h2>
+<h4 id="find">find</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//时间范围：</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">colname</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="na">fieldname</span><span class="p">:</span> <span class="p">{</span><span class="na">$lt</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">2017-05-10</span><span class="dl">'</span><span class="p">)}})</span>
+
+<span class="c1">//正则匹配：</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">colname</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="na">fieldname</span><span class="p">:</span> <span class="sr">/pattern/</span><span class="p">})</span>
+
+<span class="c1">//字段存在：</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">colname</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="na">fieldname</span><span class="p">:</span> <span class="p">{</span><span class="na">$exists</span><span class="p">:</span> <span class="kc">true</span><span class="p">}})</span>
+
+<span class="c1">//字段非空：</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">colname</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="na">fieldname</span><span class="p">:</span> <span class="p">{</span><span class="na">$ne</span><span class="p">:</span> <span class="kc">null</span><span class="p">}})</span>
+
+<span class="c1">//格式化显示</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">colname</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">print</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">create_at</span><span class="p">.</span><span class="nx">toLocaleFormat</span><span class="p">(</span><span class="dl">'</span><span class="s1">%Y%m%d %H%M%S</span><span class="dl">'</span><span class="p">),</span>
+    <span class="dl">'</span><span class="se">\t</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nx">item</span><span class="p">.</span><span class="nx">account</span><span class="p">,</span> 
+    <span class="dl">'</span><span class="se">\t</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nx">item</span><span class="p">.</span><span class="nx">balance</span><span class="p">,</span>
+    <span class="dl">'</span><span class="se">\t</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nx">item</span><span class="p">.</span><span class="nx">category</span>
+  <span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h4 id="aggregate">aggregate</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//北京时间日期</span>
+<span class="nx">col</span><span class="p">.</span><span class="nx">aggregate</span><span class="p">([</span>
+  <span class="p">{</span><span class="dl">'</span><span class="s1">$project</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">'</span><span class="s1">$dateToString</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">format</span><span class="dl">'</span><span class="p">:</span> <span class="dl">"</span><span class="s2">%Y-%m-%d</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+          <span class="dl">'</span><span class="s1">$add</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">$create_at</span><span class="dl">'</span><span class="p">,</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">]</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">}},</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="副本">副本</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//初始化：</span>
+<span class="nx">rs</span><span class="p">.</span><span class="nx">initiate</span><span class="p">({</span>
+  <span class="na">_id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rsname</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">members</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="na">_id</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">host</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hostname1:port</span><span class="dl">"</span><span class="p">,</span> <span class="na">priority</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="na">votes</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">_id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">host</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hostname2:port</span><span class="dl">"</span><span class="p">,</span> <span class="na">priority</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="na">votes</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">_id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">host</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hostname3:port</span><span class="dl">"</span><span class="p">,</span> <span class="na">priority</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="na">votes</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+ <span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1">//增加副本</span>
+<span class="nx">rs</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span><span class="na">host</span><span class="p">:</span><span class="dl">'</span><span class="s1">hostname</span><span class="dl">'</span><span class="p">,</span> <span class="na">priority</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">votes</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+
+<span class="c1">//删除副本</span>
+<span class="nx">rs</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="dl">'</span><span class="s1">hostname</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="c1">//增加投票节点</span>
+<span class="nx">rs</span><span class="p">.</span><span class="nx">addArb</span><span class="p">(</span><span class="dl">'</span><span class="s1">hostname</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="c1">//切换主库</span>
+<span class="nx">cfg</span> <span class="o">=</span> <span class="nx">rs</span><span class="p">.</span><span class="nx">conf</span><span class="p">()</span>
+<span class="nx">cfg</span><span class="p">.</span><span class="nx">members</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">priority</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nx">cfg</span><span class="p">.</span><span class="nx">members</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">priority</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nx">rs</span><span class="p">.</span><span class="nx">reconfig</span><span class="p">(</span><span class="nx">cfg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="分片">分片</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//database开启分片</span>
+<span class="nx">sh</span><span class="p">.</span><span class="nx">enableSharding</span><span class="p">(</span><span class="nx">dbname</span><span class="p">)</span>
+
+<span class="c1">//修改主分片</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">adminCommand</span><span class="p">(</span> <span class="p">{</span> <span class="na">movePrimary</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">dbname</span><span class="dl">"</span><span class="p">,</span> <span class="na">to</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">shardname</span><span class="dl">"</span> <span class="p">}</span> <span class="p">)</span>
+
+<span class="c1">//增加分片</span>
+<span class="nx">sh</span><span class="p">.</span><span class="nx">addShard</span><span class="p">(</span> <span class="dl">"</span><span class="s2">rsname/hostname:port</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="c1">//设置分片</span>
+<span class="nx">sh</span><span class="p">.</span><span class="nx">shardCollection</span><span class="p">(</span> <span class="dl">"</span><span class="s2">dbname.colname</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">fieldname</span> <span class="p">:</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">)</span>
+
+<span class="c1">//删除索引</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">colname</span><span class="p">.</span><span class="nx">dropIndex</span><span class="p">(</span> <span class="dl">"</span><span class="s2">indexname</span><span class="dl">"</span> <span class="p">)</span>
+
+<span class="c1">//更新路由数据</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">adminCommand</span><span class="p">(</span><span class="dl">"</span><span class="s2">flushRouterConfig</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="运维">运维</h2>
+<h4 id="性能">性能</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 显示某个表正在进行的操作</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">currentOp</span><span class="p">().</span><span class="nx">inprog</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+<span class="err"> </span>   <span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">ns</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">dbname.colname</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="nx">print</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">opid</span><span class="p">);</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="nx">print</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">item</span><span class="p">),</span> <span class="kc">null</span><span class="p">,</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
+<span class="err"> </span> <span class="err"> </span> <span class="p">}</span>
+<span class="err"> </span> <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1">// 显示创建索引的进度</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">currentOp</span><span class="p">().</span><span class="nx">inprog</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span>
+<span class="err">  </span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">    </span><span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">command</span> <span class="o">&amp;&amp;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">command</span><span class="p">.</span><span class="nx">createIndexes</span><span class="p">)</span> <span class="p">{</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="nx">print</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">item</span><span class="p">))</span>
+<span class="err">    </span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1">// 显示耗时超过60秒的操作</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">currentOp</span><span class="p">().</span><span class="nx">inprog</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">  </span><span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">secs_running</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">    </span><span class="nx">print</span><span class="p">(</span><span class="dl">'</span><span class="s1">----</span><span class="dl">'</span><span class="p">);</span>
+<span class="err">    </span><span class="nx">print</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">opid</span><span class="p">);</span>
+<span class="err">    </span><span class="nx">print</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">item</span><span class="p">),</span> <span class="kc">null</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="c1">//kill某个表超过100秒的操作</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">currentOp</span><span class="p">().</span><span class="nx">inprog</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">  </span><span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">secs_running</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">    </span><span class="nx">print</span><span class="p">(</span><span class="dl">'</span><span class="s1">----</span><span class="dl">'</span><span class="p">);</span>
+<span class="err">    </span><span class="nx">print</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">opid</span><span class="p">);</span>
+<span class="err">    </span><span class="nx">print</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">item</span><span class="p">),</span> <span class="kc">null</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+<span class="err">    </span><span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">ns</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">FEWeb.gift_items</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">  </span>    <span class="nx">db</span><span class="p">.</span><span class="nx">killOp</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">opid</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="err">  </span><span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h4 id="删除">删除</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//删除数据库：</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">drop</span><span class="cm">/*危险*/</span><span class="nx">Database</span><span class="p">()</span>
+
+<span class="c1">//释放删除的空间</span>
+<span class="nx">use</span> <span class="nx">dbname</span><span class="p">;</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">runCommand</span><span class="p">({</span><span class="na">compact</span><span class="p">:</span> <span class="dl">"</span><span class="s2">colname</span><span class="dl">"</span><span class="p">})</span>
+
+<span class="c1">//删除全部库</span>
+<span class="kd">var</span> <span class="nx">dbs</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">getMongo</span><span class="p">().</span><span class="nx">getDBNames</span><span class="p">()</span>
+<span class="k">for</span><span class="err"> </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">dbs</span><span class="p">){</span>
+<span class="err"> </span> <span class="err"> </span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">getMongo</span><span class="p">().</span><span class="nx">getDB</span><span class="p">(</span> <span class="nx">dbs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">);</span>
+<span class="err"> </span> <span class="err"> </span> <span class="nx">print</span><span class="p">(</span> <span class="dl">"</span><span class="s2">dropping db </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">db</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span> <span class="p">);</span>
+<span class="err"> </span> <span class="err"> </span> <span class="nx">db</span><span class="p">.</span><span class="nx">dropDatabase</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="退出">退出</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//退出</span>
+<span class="nx">use</span> <span class="nx">admin</span><span class="p">;</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">shutdownServer</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+  <aside class="sidebar__right ">
+    <nav class="toc">
+      <header><h4 class="nav__title">Tags</h4></header>
+      <ul class="toc__menu">
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#linux'>linux <small style="font-weight: normal;">(8)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#开发工具'>开发工具 <small style="font-weight: normal;">(4)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#编程语言'>编程语言 <small style="font-weight: normal;">(5)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#web开发'>web开发 <small style="font-weight: normal;">(3)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#中间件'>中间件 <small style="font-weight: normal;">(3)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#网络'>网络 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#数据库'>数据库 <small style="font-weight: normal;">(4)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#读书'>读书 <small style="font-weight: normal;">(9)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#个人提升'>个人提升 <small style="font-weight: normal;">(5)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#思维导图'>思维导图 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#大数据'>大数据 <small style="font-weight: normal;">(1)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#自动驾驶'>自动驾驶 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#windows'>windows <small style="font-weight: normal;">(1)</small></a></li>
+        
+      </ul>
+    </nav>
+  </aside>
+
+  <div>
+    <small>
+    
+      <a href='/DailyNotes/tags.html#数据库'>🔖数据库</a>&nbsp;
+    
+    </small>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/DailyNotes/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 每日笔记. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/DailyNotes/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/DailyNotes/assets/js/lunr/lunr.min.js"></script>
+<script src="/DailyNotes/assets/js/lunr/lunr-store.js"></script>
+<script src="/DailyNotes/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

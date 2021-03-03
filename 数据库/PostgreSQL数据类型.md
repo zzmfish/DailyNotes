@@ -1,4 +1,9 @@
+---
+tags: 数据库
+---
+
 * 数值类型
+  
   * `smallint`: 2 字节
   * `integer`: 4 字节
   * `bigint`: 8 字节

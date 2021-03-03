@@ -1,5 +1,11 @@
+---
+tags: 编程语言
+---
+
+
 
 #### 使用ofstream写文件
+
 ```C++
 #include <iostream>
 #include <fstream>

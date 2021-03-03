@@ -1,163 +1,344 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/DailyNotes/feed.xml" rel="self" type="application/atom+xml" /><link href="/DailyNotes/" rel="alternate" type="text/html" /><updated>2021-03-02T21:32:01+08:00</updated><id>/DailyNotes/feed.xml</id><title type="html">每日笔记</title><entry><title type="html">Jekyll</title><link href="/DailyNotes/2021/03/02/Jekyll.html" rel="alternate" type="text/html" title="Jekyll" /><published>2021-03-02T00:00:00+08:00</published><updated>2021-03-02T00:00:00+08:00</updated><id>/DailyNotes/2021/03/02/Jekyll</id><content type="html" xml:base="/DailyNotes/2021/03/02/Jekyll.html">&lt;h4 id=&quot;命令&quot;&gt;命令&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 新建一个网站&lt;/span&gt;
-jekyll new jekyll
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/DailyNotes/feed.xml" rel="self" type="application/atom+xml" /><link href="/DailyNotes/" rel="alternate" type="text/html" /><updated>2021-03-03T10:25:53+08:00</updated><id>/DailyNotes/feed.xml</id><title type="html">每日笔记</title><entry><title type="html">Bash</title><link href="/DailyNotes/2021/03/03/Bash.html" rel="alternate" type="text/html" title="Bash" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/Bash</id><content type="html" xml:base="/DailyNotes/2021/03/03/Bash.html">&lt;h2 id=&quot;运算符&quot;&gt;运算符&lt;/h2&gt;
 
-&lt;span class=&quot;c&quot;&gt;# 修改Gemfile之后要更新&lt;/span&gt;
-bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;h4 id=&quot;算术运算&quot;&gt;算术运算&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$((&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;))&lt;/span&gt;
 
-&lt;span class=&quot;c&quot;&gt;# 启动localhost:4000服务&lt;/span&gt;
-bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;span class=&quot;c&quot;&gt;#求余数&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;expr &lt;/span&gt;5 % 4&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;字符串&quot;&gt;字符串&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	        &lt;span class=&quot;c&quot;&gt;#长度&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;:pos&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	    &lt;span class=&quot;c&quot;&gt;#从位置$pos开始提取子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;:pos:len&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#从位置$pos开始提取长度为$len的子串&lt;/span&gt;
+ 	 
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;#substr&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#从开头删除最短匹配的子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;##substr&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#从开头删除最长匹配的子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%substr&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#从结尾删除最短匹配的子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%%substr&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#从结尾删除最长匹配的子串&lt;/span&gt;
+ 	 
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/substr/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#替换第一个匹配的子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;//substr/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#替换所有匹配的子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/#substr/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#替换前缀匹配的子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/%substr/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;#替换后缀匹配的子串&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;主题&quot;&gt;主题&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;流程控制&quot;&gt;流程控制&lt;/h2&gt;
+&lt;h4 id=&quot;case&quot;&gt;case&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; EXPRESSION &lt;span class=&quot;k&quot;&gt;in
+  &lt;/span&gt;PATTERN_1&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    STATEMENTS
+    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+  PATTERN_2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    STATEMENTS
+    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+  PATTERN_N&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    STATEMENTS
+    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    STATEMENTS
+    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;内置命令&quot;&gt;内置命令&lt;/h2&gt;
+&lt;h4 id=&quot;getopts&quot;&gt;getopts&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;while &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;getopts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a:bc&quot;&lt;/span&gt; arg &lt;span class=&quot;c&quot;&gt;#冒号表示该选项需要参数&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;do
+  case&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$arg&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in
+    &lt;/span&gt;a&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a&apos;s arg:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$OPTARG&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#参数存在$OPTARG中&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+    b&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+    c&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+    ?&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#不认识的选项&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;unkonw argument&quot;&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
+      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;set&quot;&gt;set&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 变量没声明要报错&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; nounset
+
+&lt;span class=&quot;c&quot;&gt;# 显示执行的命令&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; xtrace
+
+&lt;span class=&quot;c&quot;&gt;# 遇到错误（程序返回非0值）停止执行&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; errexit
+
+&lt;span class=&quot;c&quot;&gt;# 遇到错误继续执行&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; +e
+
+&lt;span class=&quot;c&quot;&gt;# 管道中的子命令出错要停止执行&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-eo&lt;/span&gt; pipefail
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;trap&quot;&gt;trap&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#退出时关闭进程组&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;trap&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;trap - SIGTERM &amp;amp;&amp;amp; kill 0&apos;&lt;/span&gt; SIGINT SIGTERM EXIT
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;颜色&quot;&gt;颜色&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[31mRed&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[0m&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Code&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Color&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;39&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Default foreground color&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Black&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Red&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;32&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Green&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;33&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Yellow&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;34&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Blue&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;35&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Magenta&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;36&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Cyan&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;37&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Light gray&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;90&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Dark gray&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;91&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Light red&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;92&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Light green&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;93&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Light yellow&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;94&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Light blue&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;95&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Light magenta&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;96&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Light cyan&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;97&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;White&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">运算符</summary></entry><entry><title type="html">Bazel</title><link href="/DailyNotes/2021/03/03/Bazel.html" rel="alternate" type="text/html" title="Bazel" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/Bazel</id><content type="html" xml:base="/DailyNotes/2021/03/03/Bazel.html">&lt;h2 id=&quot;概念&quot;&gt;概念&lt;/h2&gt;
+
+&lt;h4 id=&quot;workspace&quot;&gt;Workspace&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;Minima&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;包含软件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;源代码&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;包含&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;输出目录&lt;/code&gt;的符号链接&lt;/li&gt;
+  &lt;li&gt;包含&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WORKSPACE文件&lt;/code&gt;指明外部依赖&lt;/li&gt;
+  &lt;li&gt;包含WORKSPACE文件的目录是workspace的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;根目录&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;忽略子目录的WORKSPACE文件&lt;/li&gt;
+  &lt;li&gt;可以是&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WORKSPACE.bazel&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;显示数学公式&quot;&gt;显示数学公式&lt;/h4&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;文档&quot;&gt;文档&lt;/h4&gt;
+&lt;h4 id=&quot;repositories&quot;&gt;Repositories&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;Posts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/pages/&quot;&gt;Pages&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">命令 ```bash 新建一个网站 jekyll new jekyll</summary></entry><entry><title type="html">Python2</title><link href="/DailyNotes/2021/02/26/Python2.html" rel="alternate" type="text/html" title="Python2" /><published>2021-02-26T00:00:00+08:00</published><updated>2021-02-26T00:00:00+08:00</updated><id>/DailyNotes/2021/02/26/Python2</id><content type="html" xml:base="/DailyNotes/2021/02/26/Python2.html">&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;reload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setdefaultencoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;utf-8&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;li&gt;仓库用来&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;组织代码&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;根目录又称&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;主仓库&lt;/code&gt;或&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;外部仓库&lt;/code&gt;（external）在WORKSPACE中定义&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;packages&quot;&gt;Packages&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;目录包含&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BUILD&lt;/code&gt;或&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BUILD.bazel&lt;/code&gt;文件&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;文件&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;依赖关系&lt;/code&gt;的集合&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;targets&quot;&gt;Targets&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;package包含的元素，主要是&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;文件&lt;/code&gt;或&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;规则&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;labels&quot;&gt;Labels&lt;/h4&gt;
+
+&lt;p&gt;target的名称，格式为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@repositrory_name//package_name:target_name&lt;/code&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@myrepo//my/app/main:app_binary
+//my/app/main:app_binary    #同一个仓库
+//my/app:app
+//my/app     #同上
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;日志&lt;/p&gt;
+&lt;h4 id=&quot;rules&quot;&gt;Rules&lt;/h4&gt;
 
-&lt;p&gt;日期时间
-datetime.datetime.now() （当前datetime）
-time.localtime()  （当前struct_time）
-time.time()  （当前时间戳）
-time.localtime(time.time() - 24 * 3600)   （昨天的日期时间）
-time.strptime(‘2014/12/12’, ‘%Y/%m/%d’)  （字符串 -&amp;gt; struct_time）
-time.localtime(ts)  （unix时间戳 -&amp;gt; struct_time）
-datetime.datetime.now().strftime(‘%Y-%m-%d’)  （当前日期字符串）&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;指明输入文件和输出文件的关系&lt;/li&gt;
+  &lt;li&gt;生成输出文件的步骤&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;网络
-req = urllib2.Request(url = url, data = data)  （HTTP请求）
-urllib2.urlopen(req).read()&lt;/p&gt;
+&lt;h2 id=&quot;workspace规则&quot;&gt;WORKSPACE规则&lt;/h2&gt;
 
-&lt;p&gt;（设置默认编码
-解决UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误）
-import sys
-reload(sys)
-sys.setdefaultencoding(‘utf8’)&lt;/p&gt;
+&lt;p&gt;Workspace规则主要用来解决外部依赖&lt;/p&gt;
 
-&lt;p&gt;（以指定编码打开文件）
-f = codecs.open(‘out.txt’, mode=”w”, encoding=”utf-8”)&lt;/p&gt;
+&lt;h4 id=&quot;bind&quot;&gt;bind&lt;/h4&gt;
 
-&lt;p&gt;（单步调试）
-pdb.set_trace()&lt;/p&gt;
+&lt;p&gt;在//external中为目标指定一个别名。不推荐使用。&lt;/p&gt;
 
-&lt;p&gt;字符串处理
-re.match(pattern, string)   （匹配开头）
-re.search(pattern, string)   （匹配任意位置）
-re.findall(pattern, string)   （匹配全部）&lt;/p&gt;
+&lt;h4 id=&quot;local_repository&quot;&gt;local_repository&lt;/h4&gt;
 
-&lt;p&gt;数据编码
-json.dumps(s)
-base64.b64encode(s)
-urllib.quote(str)
-urllib.unquote(str)
-binascii.b2a_hex(os.urandom(4))&lt;/p&gt;
+&lt;p&gt;引用其他目录中的目标&lt;/p&gt;
 
-&lt;p&gt;参数解析
-parser = argparse.ArgumentParser()
-parser.add_argument(‘–say_hello’, dest=”say_hello”, action=’store_true’)
-parser.add_argument(‘–table’, type=str, default=’’)
-args = parser.parse_args()&lt;/p&gt;
-
-&lt;p&gt;调用动态库
-api = ctypes.CDLL(‘libfoo.so’, DLFCN.RTLD_LAZY)
-api.foo.argtypes = [ctypes.c_char_p, ctypes.c_int]
-api.foo.restype = ctypes.c_int
-res = api.foo(msg, len(msg)&lt;/p&gt;
-
-&lt;p&gt;美化显示
-pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(stuff)&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">reload(sys) sys.setdefaultencoding(&apos;utf-8&apos;)</summary></entry><entry><title type="html">Python3</title><link href="/DailyNotes/2021/02/26/Python3.html" rel="alternate" type="text/html" title="Python3" /><published>2021-02-26T00:00:00+08:00</published><updated>2021-02-26T00:00:00+08:00</updated><id>/DailyNotes/2021/02/26/Python3</id><content type="html" xml:base="/DailyNotes/2021/02/26/Python3.html">&lt;h4 id=&quot;编译安装&quot;&gt;编译安装&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev
-./configure &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$prefix&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#打开config.log查找ssl、ffi是否成功&lt;/span&gt;
-make
-make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;local_repository(
+    name = &quot;my-ssl&quot;,
+    path = &quot;/home/user/ssl&quot;,
+)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;参数解释&quot;&gt;参数解释&lt;/h4&gt;
+&lt;p&gt;可以指定&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@my-ssl//src:openssl-lib&lt;/code&gt;作为这个库的依赖。&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;argparse&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argparse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArgumentParser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#--job或-j，整数类型，必需
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;--job_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;-j&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;job_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;h4 id=&quot;new_local_repository&quot;&gt;new_local_repository&lt;/h4&gt;
+
+&lt;p&gt;把本地目录变成一个Bazel仓库。&lt;/p&gt;
+
+&lt;p&gt;比如聊天app代码目录在&lt;em&gt;/chat-app&lt;/em&gt;，要用的SSL库在&lt;em&gt;～/ssl&lt;/em&gt;。&lt;/p&gt;
+
+&lt;p&gt;1、添加&lt;em&gt;~/chat-app/BUILD.my-ssl&lt;/em&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;java_library(
+    name = &quot;openssl&quot;,
+    srcs = glob([&apos;*.java&apos;])
+    visibility = [&quot;//visibility:public&quot;],
+)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;日志输出&quot;&gt;日志输出&lt;/h4&gt;
+&lt;p&gt;2、在~/chat-app/WORKSPACE加上：&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# 输出日志到文件
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basicConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;example.log&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;%(levelname)s:%(message)s&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;level&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 输出日志到终端
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StreamHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 根据日期切换日志文件
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basicConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;file_handler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimedRotatingFileHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;video.log&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;MIDNIGHT&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;file_handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Formatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;%(asctime)s %(message)s’)
-logger = logging.getLogger()
-logger.addHandler(file_handler)
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;print中文问题&quot;&gt;print中文问题&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;codecs&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;codecs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getwriter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 显示unicode
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u81f4\u547d\u9519\u8bef&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;new_local_repository(
+    name = &quot;my-ssl&quot;,
+    path = &quot;/home/user/ssl&quot;,
+    build_file = &quot;BUILD.my-ssl&quot;,
+)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;文件和目录&quot;&gt;文件和目录&lt;/h4&gt;
+&lt;p&gt;然后就可以把&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@my-ssl//:openssl&lt;/code&gt;添加到目标的依赖。&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;makedirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# 递归创建目录
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# 列出目录内容
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getmtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 获得文件修改时间
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;*/*.gif&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;# 列出匹配的文件
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 递归遍历目录下的文件
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;md_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;followlinks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;build文件&quot;&gt;BUILD文件&lt;/h2&gt;
 
-&lt;h4 id=&quot;显示颜色&quot;&gt;显示颜色&lt;/h4&gt;
+&lt;h2 id=&quot;cc规则&quot;&gt;C/C++规则&lt;/h2&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\033&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[32m&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\033&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[m&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;cc_binary&quot;&gt;cc_binary&lt;/h4&gt;
 
-&lt;h4 id=&quot;网络请求&quot;&gt;网络请求&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bazel&quot;&gt;cc_binary(
+    name = &quot;hello-world&quot;,
+    srcs = [&quot;hello-world.cc&quot;],
+)
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# form格式
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;name&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;value&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 获取应答
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">编译安装 sudo apt install libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev ./configure --prefix=$prefix #打开config.log查找ssl、ffi是否成功 make make install</summary></entry><entry><title type="html">Docker</title><link href="/DailyNotes/2021/02/25/Docker.html" rel="alternate" type="text/html" title="Docker" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>/DailyNotes/2021/02/25/Docker</id><content type="html" xml:base="/DailyNotes/2021/02/25/Docker.html">&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+&lt;h4 id=&quot;cc_import&quot;&gt;cc_import&lt;/h4&gt;
+
+&lt;h4 id=&quot;cc_library&quot;&gt;cc_library&lt;/h4&gt;
+
+&lt;h4 id=&quot;cc_proto_library&quot;&gt;cc_proto_library&lt;/h4&gt;
+
+&lt;h4 id=&quot;fdo_prefetch_hints&quot;&gt;fdo_prefetch_hints&lt;/h4&gt;
+
+&lt;h4 id=&quot;fdo_profile&quot;&gt;fdo_profile&lt;/h4&gt;
+
+&lt;h4 id=&quot;propeller_optimize&quot;&gt;propeller_optimize&lt;/h4&gt;
+
+&lt;h4 id=&quot;cc_test&quot;&gt;cc_test&lt;/h4&gt;
+
+&lt;h4 id=&quot;cc_toolchain&quot;&gt;cc_toolchain&lt;/h4&gt;
+
+&lt;h4 id=&quot;cc_toolchain_suite&quot;&gt;cc_toolchain_suite&lt;/h4&gt;
+
+&lt;h2 id=&quot;文档链接&quot;&gt;文档链接&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.bazel.build/versions/master/build-ref.html&quot;&gt;Concepts and Terminology&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.bazel.build/versions/master/be/workspace.html&quot;&gt;Workspace Rules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="开发工具" /><summary type="html">概念</summary></entry><entry><title type="html">C++</title><link href="/DailyNotes/2021/03/03/C++.html" rel="alternate" type="text/html" title="C++" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/C++</id><content type="html" xml:base="/DailyNotes/2021/03/03/C++.html">&lt;h4 id=&quot;使用ofstream写文件&quot;&gt;使用ofstream写文件&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;fstream&amp;gt;
+using namespace std;
+
+int main () {
+  ofstream myfile;
+  myfile.open (&quot;example.txt&quot;);
+  myfile &amp;lt;&amp;lt; &quot;Writing this to a file.\n&quot;;
+  myfile.close();
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;日期时间&quot;&gt;日期时间&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;//返回当前unix时间戳
+#include &amp;lt;time.h&amp;gt;
+time_t time (time_t* timer);
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="编程语言" /><summary type="html">使用ofstream写文件</summary></entry><entry><title type="html">CSS</title><link href="/DailyNotes/2021/03/03/CSS.html" rel="alternate" type="text/html" title="CSS" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/CSS</id><content type="html" xml:base="/DailyNotes/2021/03/03/CSS.html">&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/* 字体 */&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;Microsoft YaHei&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre-wrap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* pre允许文字折行 */&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;word-break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;break-all&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;/* 允许单词中间折行 */&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nowrap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;/* 不折行 */&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;/*-- 选择子 --*/&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;/* 孩子 */&lt;/span&gt;  
+&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;/* 子孙 */&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="Web开发" /><summary type="html">```css /* 字体 */ body { font-family: “Microsoft YaHei” }</summary></entry><entry><title type="html">Docker</title><link href="/DailyNotes/2021/03/03/Docker.html" rel="alternate" type="text/html" title="Docker" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/Docker</id><content type="html" xml:base="/DailyNotes/2021/03/03/Docker.html">&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+
 &lt;h4 id=&quot;数据存放位置镜像容器&quot;&gt;数据存放位置（镜像、容器）&lt;/h4&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/var/lib/docker
@@ -299,192 +480,7 @@ docker tag &lt;span class=&quot;nv&quot;&gt;$image_id&lt;/span&gt; &lt;span clas
 &lt;h6 id=&quot;unpause&quot;&gt;unpause&lt;/h6&gt;
 &lt;h6 id=&quot;update&quot;&gt;update&lt;/h6&gt;
 &lt;h6 id=&quot;version&quot;&gt;version&lt;/h6&gt;
-&lt;h6 id=&quot;wait&quot;&gt;wait&lt;/h6&gt;</content><author><name></name></author><summary type="html">问题 数据存放位置（镜像、容器）</summary></entry><entry><title type="html">Linux</title><link href="/DailyNotes/2021/02/25/Linux.html" rel="alternate" type="text/html" title="Linux" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>/DailyNotes/2021/02/25/Linux</id><content type="html" xml:base="/DailyNotes/2021/02/25/Linux.html">&lt;h3 id=&quot;常用命令&quot;&gt;常用命令&lt;/h3&gt;
-
-&lt;h5 id=&quot;crontab&quot;&gt;crontab&lt;/h5&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 添加crontab&lt;/span&gt;
-crontab &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; | &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0 * * * * mycommand&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; | crontab -
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;find&quot;&gt;find&lt;/h5&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 修改时间 &amp;lt; 24h（不到1天）&lt;/span&gt;
-find &lt;span class=&quot;nt&quot;&gt;-mtime&lt;/span&gt; 0
-find &lt;span class=&quot;nt&quot;&gt;-mtime&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-1&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 24h &amp;lt;= 修改时间 &amp;lt; 48h（1天不到2天）&lt;/span&gt;
-find &lt;span class=&quot;nt&quot;&gt;-mtime&lt;/span&gt; 1
-
-&lt;span class=&quot;c&quot;&gt;# 修改时间 &amp;gt;= 48h&lt;/span&gt;
-find &lt;span class=&quot;nt&quot;&gt;-mtime&lt;/span&gt; +1
-
-&lt;span class=&quot;c&quot;&gt;# 修改时间 &amp;lt; 30min&lt;/span&gt;
-find &lt;span class=&quot;nt&quot;&gt;-cmin&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-30&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 大小为0&lt;/span&gt;
-find &lt;span class=&quot;nt&quot;&gt;-size&lt;/span&gt; 0
-
-&lt;span class=&quot;c&quot;&gt;# 小于10k&lt;/span&gt;
-find &lt;span class=&quot;nt&quot;&gt;-size&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-10k&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 空目录&lt;/span&gt;
-find &lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt; d &lt;span class=&quot;nt&quot;&gt;-empty&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 断开的符号链接&lt;/span&gt;
-find &lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt; l -! &lt;span class=&quot;nt&quot;&gt;-exec&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-print&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;ps&quot;&gt;ps&lt;/h5&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 显示进程的子孙进程&lt;/span&gt;
-ps &lt;span class=&quot;nt&quot;&gt;--ppid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ppid&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;rsync&quot;&gt;rsync&lt;/h5&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 通过ssh同步&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# -l：保留符号链接&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# --delete：删除目标目录多余的文件&lt;/span&gt;
-rsync &lt;span class=&quot;nt&quot;&gt;-zvre&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ssh -p &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ssh_port&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$exclude_dir&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$local_dir&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$remote_user&lt;/span&gt;@&lt;span class=&quot;nv&quot;&gt;$rename_host&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$remote_dir&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;sed&quot;&gt;sed&lt;/h5&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 两行合并成一行&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;{N;s/\n/ /;p}&apos;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$input_file&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 三行合并成一行&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;{N;N;s/\n/ /g;p}&apos;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$input_file&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;split&quot;&gt;split&lt;/h5&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 按行数拆分文件
-split --verbose -d -a 3 -l $line_count $file_name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;tar&quot;&gt;tar&lt;/h5&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#压缩同时加上目录&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;cvzf &lt;span class=&quot;nv&quot;&gt;$file_name&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--transform&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;s,^,mydir/,&apos;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--show-transformed-names&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$files&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#解压同时去掉顶层目录&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xf &lt;span class=&quot;nv&quot;&gt;$file_name&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--strip-components&lt;/span&gt; 1
-
-&lt;span class=&quot;c&quot;&gt;# 显示文件列表和大小&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;tar&lt;/span&gt; tvf &lt;span class=&quot;nv&quot;&gt;$file_name&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 压缩文件&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# --ignore-failed-read: 忽略读文件错误&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# --transform: 路径变换（加上顶层目录）&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# -T: 指定文件列表&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;czvf scenarios20201203.tgz &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;--ignore-failed-read&lt;/span&gt; 
-    &lt;span class=&quot;nt&quot;&gt;--transform&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;s@^@scenarios20201203/@&apos;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; file_lis
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;unzip&quot;&gt;unzip&lt;/h5&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 显示zip文件列表&lt;/span&gt;
-unzip -l &lt;span class=&quot;nv&quot;&gt;$file_name&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;用户管理&quot;&gt;用户管理&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#添加用户：-m创建家目录 -s设置shell&lt;/span&gt;
-useradd &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /bin/bash &lt;span class=&quot;nv&quot;&gt;$user_name&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#加入到组&lt;/span&gt;
-usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$group_name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$user_name&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#重新登录（groups生效）&lt;/span&gt;
-su - &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#设置sudo权限&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$user_name&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ALL=(ALL) ALL&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  /etc/sudoers.d/&lt;span class=&quot;nv&quot;&gt;$user_name&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#重设root密码&lt;/span&gt;
-passwd root
-
-&lt;span class=&quot;c&quot;&gt;#删除用户&lt;/span&gt;
-userdel &lt;span class=&quot;nv&quot;&gt;$user_name&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;网络命令&quot;&gt;网络命令&lt;/h3&gt;
-
-&lt;h6 id=&quot;netstat&quot;&gt;netstat&lt;/h6&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#查看监听的端口&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#-l: 只显示监听端口&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#-n: 显示数字地址&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#-p: 显示程序pid和文件名&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#--inet: 只显示TCP/IP连接&lt;/span&gt;
-netstat &lt;span class=&quot;nt&quot;&gt;-lnp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--inet&lt;/span&gt;
-
-
-&lt;span class=&quot;c&quot;&gt;#显示协议统计信息&lt;/span&gt;
-netstat &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;traceroute&quot;&gt;traceroute&lt;/h6&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!bash
-#*表示收不到ICMP回声
-traceroute www.baidu.com
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;dns相关&quot;&gt;DNS相关&lt;/h6&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!bash
-host www.baidu.com
-nslookup www.baidu.com
-dig www.baidu.com
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;ip地址&quot;&gt;IP地址&lt;/h6&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 显示IP地址&lt;/span&gt;
-ip addr show
-
-&lt;span class=&quot;c&quot;&gt;# 显示docker容器的ip地址&lt;/span&gt;
-ip addr show docker0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;http&quot;&gt;HTTP&lt;/h6&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!bash
-#只显示header
-curl --head http://www.baidu.com
-
-#post数据
-curl --data &apos;DATA&apos; http://localhost:8366/video/add
-
-#显示跳转地址
-curl -Ls -o /dev/null -w %{url_effective} http://google.com
-
-#断点续传
-wget -c http://www.baidu.com/file.tgz
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;iptables&quot;&gt;iptables&lt;/h6&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!bash
-#显示所有端口限制
-sudo iptables -L -n
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;icmp&quot;&gt;ICMP&lt;/h4&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!bash
-#看ping的来源ip
-tcpdump -i eth1 icmp and icmp[icmptype]=icmp-echo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;流量监控&quot;&gt;流量监控&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!bash
-dstat -nf 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">常用命令</summary></entry><entry><title type="html">Linux命令</title><link href="/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4.html" rel="alternate" type="text/html" title="Linux命令" /><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><id>/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4</id><content type="html" xml:base="/DailyNotes/2021/02/25/Linux%E5%91%BD%E4%BB%A4.html">&lt;ul&gt;
-  &lt;li&gt;](http://vbird.dic.ksu.edu.tw/linux_server/0140networkcommand/0140networkcommand-centos4.php)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">](http://vbird.dic.ksu.edu.tw/linux_server/0140networkcommand/0140networkcommand-centos4.php)</summary></entry><entry><title type="html">Git</title><link href="/DailyNotes/2021/02/24/Git.html" rel="alternate" type="text/html" title="Git" /><published>2021-02-24T00:00:00+08:00</published><updated>2021-02-24T00:00:00+08:00</updated><id>/DailyNotes/2021/02/24/Git</id><content type="html" xml:base="/DailyNotes/2021/02/24/Git.html">&lt;h3 id=&quot;主要命令&quot;&gt;主要命令&lt;/h3&gt;
+&lt;h6 id=&quot;wait&quot;&gt;wait&lt;/h6&gt;</content><author><name></name></author><category term="Linux" /><category term="开发工具" /><summary type="html">问题</summary></entry><entry><title type="html">Git</title><link href="/DailyNotes/2021/03/03/Git.html" rel="alternate" type="text/html" title="Git" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/Git</id><content type="html" xml:base="/DailyNotes/2021/03/03/Git.html">&lt;h3 id=&quot;主要命令&quot;&gt;主要命令&lt;/h3&gt;
 
 &lt;h5 id=&quot;add&quot;&gt;add&lt;/h5&gt;
 &lt;h5 id=&quot;apply&quot;&gt;apply&lt;/h5&gt;
@@ -670,44 +666,147 @@ git ls-files &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; | xargs &lt;span c
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#显示当前所属分支&lt;/span&gt;
 git symbolic-ref &lt;span class=&quot;nt&quot;&gt;--short&lt;/span&gt; HEAD
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">主要命令</summary></entry><entry><title type="html">Tmux</title><link href="/DailyNotes/2021/02/23/Tmux.html" rel="alternate" type="text/html" title="Tmux" /><published>2021-02-23T00:00:00+08:00</published><updated>2021-02-23T00:00:00+08:00</updated><id>/DailyNotes/2021/02/23/Tmux</id><content type="html" xml:base="/DailyNotes/2021/02/23/Tmux.html">&lt;h2 id=&quot;命令&quot;&gt;命令&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tmux new-session &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$session_name&lt;/span&gt;
-tmux list-sessions
-tmux attach &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$session_name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="开发工具" /><summary type="html">主要命令</summary></entry><entry><title type="html">Golang</title><link href="/DailyNotes/2021/03/03/Golang.html" rel="alternate" type="text/html" title="Golang" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/Golang</id><content type="html" xml:base="/DailyNotes/2021/03/03/Golang.html">&lt;h4 id=&quot;参数解释&quot;&gt;参数解释&lt;/h4&gt;
 
-&lt;span class=&quot;c&quot;&gt;# 断网重连如果卡死，就调用这个&lt;/span&gt;
-tmux detach-client
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;flag&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;help message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="编程语言" /><summary type="html">参数解释</summary></entry><entry><title type="html">JavaScript</title><link href="/DailyNotes/2021/03/03/JavaScript.html" rel="alternate" type="text/html" title="JavaScript" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/JavaScript</id><content type="html" xml:base="/DailyNotes/2021/03/03/JavaScript.html">&lt;h4 id=&quot;基础数据类型&quot;&gt;基础数据类型&lt;/h4&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//获取object的keys&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//在数据前面添加元素&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unshift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;配置文件&quot;&gt;配置文件&lt;/h2&gt;
+&lt;h4 id=&quot;dom&quot;&gt;DOM&lt;/h4&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 删除节点&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; prefix C-a
+&lt;span class=&quot;c1&quot;&gt;// 监听DOMContentLoaded事件&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;DOMContentLoaded&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;document is loaded!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; base-index         1     &lt;span class=&quot;c&quot;&gt;# 窗口编号从 1 开始计数&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; display-panes-time 10000 &lt;span class=&quot;c&quot;&gt;# PREFIX-Q 显示编号的驻留时长，单位 ms&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; mouse              on    &lt;span class=&quot;c&quot;&gt;# 开启鼠标&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; pane-base-index    1     &lt;span class=&quot;c&quot;&gt;# 窗格编号从 1 开始计数&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; renumber-windows   on    &lt;span class=&quot;c&quot;&gt;# 关掉某个窗口后，编号重排&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 当前脚本路径&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scripts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scripts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scripts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentScript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-setw &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; allow-rename      off   &lt;span class=&quot;c&quot;&gt;# 禁止活动进程修改窗口名&lt;/span&gt;
-setw &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; automatic-rename  off   &lt;span class=&quot;c&quot;&gt;# 禁止自动命名新窗口&lt;/span&gt;
-setw &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; mode-keys         vi    &lt;span class=&quot;c&quot;&gt;# 进入复制模式的时候使用 vi 键位（默认是 EMACS）&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 使用XPath查询&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;evaluate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;//input&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*命名空间*/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;XPathResult&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;UNORDERED_NODE_SNAPSHOT_TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*结果集，null为新建*/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
+&lt;span class=&quot;c1&quot;&gt;// 新窗口输出html&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//复制到剪切板&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;textInput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;clipboard&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//textarea&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;textInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;textContent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;textInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;textInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setSelectionRange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;execCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;复制到剪切板&quot;&gt;复制到剪切板&lt;/h2&gt;
+&lt;h4 id=&quot;http请求&quot;&gt;HTTP请求&lt;/h4&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//异步POST请求&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XMLHttpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onreadystatechange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readyState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//loaded&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//ok&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//应答内容&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;   
+&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setRequestHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Content-Type&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;application/x-www-form-urlencoded&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;按住&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;shift&lt;/code&gt;，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;鼠标左键&lt;/code&gt;选择内容&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl + Shift+C&lt;/code&gt; 复制&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+V&lt;/code&gt; 粘贴&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">命令 ```bash tmux new-session -s $session_name tmux list-sessions tmux attach -t $session_name</summary></entry><entry><title type="html">Kubernetes</title><link href="/DailyNotes/2021/02/22/Kubernetes.html" rel="alternate" type="text/html" title="Kubernetes" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>/DailyNotes/2021/02/22/Kubernetes</id><content type="html" xml:base="/DailyNotes/2021/02/22/Kubernetes.html">&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
+&lt;span class=&quot;c1&quot;&gt;// URL编码&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// JSON编码&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// JSON解码&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;日期和时间&quot;&gt;日期和时间&lt;/h4&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// UTC时间戳(ms)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeStamp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 当地时间戳(ms)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nowDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nowTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nowDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nowDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTimezoneOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// unix时间戳(ms) 转 Date对象&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timestamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;视窗&quot;&gt;视窗&lt;/h4&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//视窗滚动位置&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//视窗大小&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//元素相对视窗的位置&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getBoundingClientRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;jquery&quot;&gt;jQuery&lt;/h4&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 设置html&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#myid&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;第三方库&quot;&gt;第三方库&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;jquery&lt;/li&gt;
+  &lt;li&gt;jquery-cookie&lt;/li&gt;
+  &lt;li&gt;Bootstrap&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="编程语言" /><category term="Web开发" /><summary type="html">基础数据类型</summary></entry><entry><title type="html">Jekyll</title><link href="/DailyNotes/2021/03/03/Jekyll.html" rel="alternate" type="text/html" title="Jekyll" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/Jekyll</id><content type="html" xml:base="/DailyNotes/2021/03/03/Jekyll.html">&lt;h4 id=&quot;命令&quot;&gt;命令&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 新建一个网站&lt;/span&gt;
+jekyll new jekyll
+
+&lt;span class=&quot;c&quot;&gt;# 修改Gemfile之后要更新&lt;/span&gt;
+bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 启动localhost:4000服务&lt;/span&gt;
+bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;主题&quot;&gt;主题&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;Minima&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;显示数学公式&quot;&gt;显示数学公式&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;文档&quot;&gt;文档&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;Posts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/pages/&quot;&gt;Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="开发工具" /><category term="Web开发" /><summary type="html">命令</summary></entry><entry><title type="html">Kubernetes</title><link href="/DailyNotes/2021/03/03/Kubernetes.html" rel="alternate" type="text/html" title="Kubernetes" /><published>2021-03-03T00:00:00+08:00</published><updated>2021-03-03T00:00:00+08:00</updated><id>/DailyNotes/2021/03/03/Kubernetes</id><content type="html" xml:base="/DailyNotes/2021/03/03/Kubernetes.html">&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
 
 &lt;h4 id=&quot;是什么&quot;&gt;是什么&lt;/h4&gt;
 
@@ -787,45 +886,4 @@ kubectl get pods
 
 &lt;span class=&quot;c&quot;&gt;# api-server代理&lt;/span&gt;
 kubectl proxy &lt;span class=&quot;nt&quot;&gt;--address&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.0.0.0 &lt;span class=&quot;nt&quot;&gt;--accept-hosts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">概述</summary></entry><entry><title type="html">Nginx</title><link href="/DailyNotes/2021/02/22/Nginx.html" rel="alternate" type="text/html" title="Nginx" /><published>2021-02-22T00:00:00+08:00</published><updated>2021-02-22T00:00:00+08:00</updated><id>/DailyNotes/2021/02/22/Nginx</id><content type="html" xml:base="/DailyNotes/2021/02/22/Nginx.html">&lt;h4 id=&quot;命令&quot;&gt;命令&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nginx
-nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; quit
-nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; reload
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;安装文件位置ubuntu&quot;&gt;安装文件位置（Ubuntu）&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 配置文件&lt;/span&gt;
-/etc/nginx/nginx.conf
-
-&lt;span class=&quot;c&quot;&gt;# 静态网页&lt;/span&gt;
-/var/www/html/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;配置文件&quot;&gt;配置文件&lt;/h4&gt;
-&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 上传大小限制&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;client_max_body_size&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;client_body_buffer_size&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;128k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;# 列出目录文件&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;autoindex&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;charset&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;utf-8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;listen &lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;root &lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/path/to/root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 根据ua切换&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$http_user_agent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;MicroMessenger)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://localhost:8010&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#代理&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/external/query&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://localhost:8020&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;proxy_read_timeout&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1800s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Real-IP&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;s&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">命令 nginx nginx -s quit nginx -s reload</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="Linux" /><category term="中间件" /><summary type="html">概述</summary></entry></feed>

@@ -1,3 +1,7 @@
+---
+tags: 数据库
+---
+
 ![](http://8.134.51.249/images/PostgreSQL.png)
 
 ## 安装
