@@ -3,7 +3,17 @@ layout: archive
 ---
 
 <div style="position: relative;">
+
+  <div>
+    <small>
+    {% for tagName in page.tags %}
+      <a href='/DailyNotes/tags.html#{{ tagName }}'>🔖{{ tagName }}</a>&nbsp;
+    {% endfor %}
+    </small>
+  </div>
+
   {{ content }}
+
   <aside class="sidebar__right ">
     <nav class="toc">
       <header><h4 class="nav__title">Tags</h4></header>
@@ -16,14 +26,6 @@ layout: archive
       </ul>
     </nav>
   </aside>
-
-  <div>
-    <small>
-    {% for tagName in page.tags %}
-      <a href='/DailyNotes/tags.html#{{ tagName }}'>🔖{{ tagName }}</a>&nbsp;
-    {% endfor %}
-    </small>
-  </div>
 </div>
 
 

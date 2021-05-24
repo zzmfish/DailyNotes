@@ -1,0 +1,564 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Git - 每日笔记</title>
+<meta name="description" content="概念">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="每日笔记">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="/DailyNotes/2021/05/22/Git.html">
+
+
+  <meta property="og:description" content="概念">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-22T00:00:00+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="/DailyNotes/2021/05/22/Git.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "/DailyNotes/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/DailyNotes/feed.xml" type="application/atom+xml" rel="alternate" title="每日笔记 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/DailyNotes/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--posts">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/DailyNotes/">
+          每日笔记
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/DailyNotes/tags.html">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="javascript:location.reload()">🌀</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Git</h1>
+    
+    <div style="position: relative;">
+
+  <div>
+    <small>
+    
+      <a href='/DailyNotes/tags.html#开发工具'>🔖开发工具</a>&nbsp;
+    
+    </small>
+  </div>
+
+  <h2 id="概念">概念</h2>
+
+<p><img src="http://zhouzm.cn/DailyNotes/assets/images/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E3%80%81%E7%89%88%E6%9C%AC%E5%BA%93.jpg" alt="" /></p>
+
+<p><img src="http://zhouzm.cn/DailyNotes/assets/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.jpg" alt="" /></p>
+
+<h2 id="git-命令">git 命令</h2>
+
+<h4 id="仓库">仓库</h4>
+
+<h6 id="init">🔹init</h6>
+
+<h6 id="clone">🔹clone</h6>
+
+<center>🍉🍉🍉</center>
+
+<h4 id="工作区">工作区</h4>
+
+<h6 id="add">🔹add</h6>
+
+<h6 id="apply">🔹apply</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply <span class="nv">$patch_file</span>
+</code></pre></div></div>
+
+<h6 id="diff">🔹diff</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 显示名称和状态</span>
+git diff master <span class="nt">--name-status</span>
+
+<span class="c"># 显示commit和上一个commit的区别</span>
+git diff <span class="nv">$commit</span>^!
+
+<span class="c"># 创建patch（可能包含二进制文件如图片）</span>
+git diff <span class="nt">--binary</span> <span class="nv">$commit_or_branch</span> <span class="o">&gt;</span> <span class="nv">$patch_file</span>
+</code></pre></div></div>
+
+<h6 id="mv">🔹mv</h6>
+
+<h6 id="rm">🔹rm</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#从仓库和本地文件删除</span>
+git <span class="nb">rm</span> <span class="nv">$file_name</span>
+
+<span class="c">#递归删除目录</span>
+git <span class="nb">rm</span> <span class="nt">-r</span> <span class="nv">$folder_name</span>
+
+<span class="c">#只从仓库删除</span>
+git <span class="nb">rm</span> <span class="nt">--cached</span> <span class="nv">$file_name</span>
+</code></pre></div></div>
+
+<h6 id="status">🔹status</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 不显示未跟踪的文件</span>
+git status <span class="nt">--untracked-files</span><span class="o">=</span>no
+git status <span class="nt">-u</span> no
+git status <span class="nt">-uno</span>
+</code></pre></div></div>
+
+<center>🍉🍉🍉</center>
+
+<h4 id="储藏">储藏</h4>
+
+<h6 id="stash">🔹stash</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#储藏更改</span>
+git stash
+
+<span class="c">#储藏更改并说明原因</span>
+git stash push <span class="nt">-m</span> <span class="nv">$message</span>
+
+<span class="c">#查看现有储藏</span>
+git stash list
+
+<span class="c">#显示储藏详情</span>
+git stash show <span class="nv">$stash</span>
+
+<span class="c">#显示diff</span>
+git stash show <span class="nt">-p</span>
+
+<span class="c">#应用最近的储藏</span>
+git stash apply
+git stash apply stash@<span class="o">{</span>1<span class="o">}</span>
+</code></pre></div></div>
+
+<center>🍉🍉🍉</center>
+
+<h4 id="提交">提交</h4>
+
+<h6 id="blame">🔹blame</h6>
+
+<h6 id="cherry-pick">🔹cherry-pick</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 合并特定commit</span>
+git cherry-pick <span class="nv">$commit_id</span>...
+</code></pre></div></div>
+
+<h6 id="commit">🔹commit</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 参数</span>
+<span class="c"># --amend 修改上一次的提交记录</span>
+<span class="c"># -s 签名</span>
+<span class="c"># -a 提交全部修改或删除的文件（不包括新增）</span>
+
+<span class="c"># 公司提MR格式规范</span>
+git commit <span class="nt">-sm</span> <span class="s2">"[SIM-xxx][BehaviorPlanning] message content"</span>
+
+<span class="c"># 弹出编辑器修改上一个commit message（没有push才能改）</span>
+git commit <span class="nt">-s</span> <span class="nt">--amend</span>
+</code></pre></div></div>
+
+<h6 id="log">🔹log</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#最近10条日志</span>
+git log <span class="nt">-n</span> 10
+
+<span class="c">#单行显示</span>
+git log <span class="nt">--pretty</span><span class="o">=</span>oneline
+git log <span class="nt">--oneline</span>
+
+<span class="c">#修改的文件</span>
+git log <span class="nt">--name-only</span> <span class="nt">-10</span>
+
+<span class="c">#修改的文件内容</span>
+git log <span class="nt">--name-status</span> <span class="nt">-10</span>
+
+<span class="c">#master的修改</span>
+git log <span class="nt">-n20</span> <span class="nt">--graph</span> <span class="nt">--pretty</span><span class="o">=</span>oneline master
+
+<span class="c">#显示分支名</span>
+git log <span class="nt">--oneline</span> <span class="nt">--decorate</span> <span class="nt">-10</span>
+
+<span class="c"># 显示某个分支的修改</span>
+git log <span class="nt">--oneline</span> <span class="nt">-10</span> <span class="nv">$branch_name</span>
+
+<span class="c">#显示分支图</span>
+git log <span class="nt">--oneline</span> <span class="nt">--decorate</span> <span class="nt">--graph</span> <span class="nt">-10</span>
+</code></pre></div></div>
+
+<h6 id="reset">🔹reset</h6>
+
+<p><img src="http://zhouzm.cn/DailyNotes/assets/images/git%20reset.png" alt="" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 撤销一次commit</span>
+git reset <span class="nt">--soft</span> HEAD^
+
+<span class="c"># 回滚到 commit</span>
+git reset <span class="nv">$commit_id</span>
+
+<span class="c"># 撤销 add</span>
+git reset HEAD <span class="nv">$file_name</span>
+
+<span class="c"># 放弃本地修改</span>
+git reset <span class="nt">--hard</span> origin/master
+
+<span class="c"># 撤销未完成的 merge（merge前的版本号）</span>
+git reset <span class="nt">--hard</span> <span class="nv">$commit_id</span>
+</code></pre></div></div>
+
+<h6 id="show">🔹show</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 显示某个版本的文件</span>
+git show <span class="nv">$revision</span>:<span class="nv">$file_path</span>
+
+<span class="c"># 显示某个commit的修改</span>
+git show <span class="nv">$commit</span>
+
+<span class="c"># 显示某个分支的文件</span>
+git show <span class="nv">$branch_name</span>:<span class="nv">$file_path</span>
+</code></pre></div></div>
+
+<center>🍉🍉🍉</center>
+
+<h4 id="分支">分支</h4>
+
+<h6 id="checkout">🔹checkout</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 新建分支</span>
+git checkout <span class="nt">-b</span> <span class="nv">$branch_name</span>
+
+<span class="c"># 解决冲突状态：使用对方的修改</span>
+git checkout <span class="nt">--theirs</span> <span class="nb">.</span> 
+
+<span class="c"># 撤销未完成的merge（merge时所在的分支）</span>
+git checkout <span class="nv">$branch_name</span>
+
+<span class="c"># 检出某个版本的文件</span>
+git checkout <span class="nv">$commit_id</span> <span class="nv">$file_name</span>
+git checkout <span class="nv">$branch_name</span> <span class="nv">$file_name</span>
+
+<span class="c"># 撤销删除的文件/目录</span>
+git checkout HEAD <span class="nv">$file_name</span>
+</code></pre></div></div>
+
+<h6 id="branch">🔹branch</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#显示当前分支</span>
+git branch <span class="nt">--show-current</span>
+
+<span class="c">#删除本地分支</span>
+git branch <span class="nt">-d</span> <span class="nv">$branch_name</span>
+
+<span class="c">#显示全部分支</span>
+git branch <span class="nt">-a</span>
+
+<span class="c">#显示远程分支</span>
+git branch <span class="nt">-r</span>
+</code></pre></div></div>
+
+<h6 id="merge">🔹merge</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 取消合并</span>
+git merge <span class="nt">--abort</span>
+</code></pre></div></div>
+
+<h6 id="rebase">🔹rebase</h6>
+
+<center>🍉🍉🍉</center>
+
+<h4 id="远程">远程</h4>
+
+<h6 id="fetch">🔹fetch</h6>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 拉取远程分支到本地</span>
+git fetch origin <span class="nv">$branch_name</span>
+</code></pre></div></div>
+
+<h6 id="pull">🔹pull</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># rebase 远程提交而不是 merge</span>
+git pull <span class="nt">--rebase</span>
+</code></pre></div></div>
+
+<h6 id="push">🔹push</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 推送到远程分支</span>
+git push origin <span class="nv">$branch_name</span>
+</code></pre></div></div>
+
+<h6 id="remote">🔹remote</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 更改代码库地址</span>
+git remote set-url origin <span class="nv">$new_url</span>
+</code></pre></div></div>
+
+<center>🍉🍉🍉</center>
+
+<h4 id="其他">其他</h4>
+
+<h6 id="bisect">🔹bisect</h6>
+
+<h6 id="grep">🔹grep</h6>
+
+<h6 id="ls-files">🔹ls-files</h6>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 恢复本地删除的文件</span>
+git ls-files <span class="nt">-d</span> | xargs <span class="nt">-i</span> git checkout <span class="o">{}</span>
+</code></pre></div></div>
+
+<h6 id="sparse-checkout">🔹sparse-checkout</h6>
+
+<h6 id="restore">🔹restore</h6>
+
+<h6 id="switch">🔹switch</h6>
+
+<h6 id="symbolic-ref">🔹symbolic-ref</h6>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#显示当前所属分支</span>
+git symbolic-ref <span class="nt">--short</span> HEAD
+</code></pre></div></div>
+
+<h6 id="tag">🔹tag</h6>
+
+
+  <aside class="sidebar__right ">
+    <nav class="toc">
+      <header><h4 class="nav__title">Tags</h4></header>
+      <ul class="toc__menu">
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#linux'>linux <small style="font-weight: normal;">(8)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#web开发'>web开发 <small style="font-weight: normal;">(3)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#编程语言'>编程语言 <small style="font-weight: normal;">(5)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#开发工具'>开发工具 <small style="font-weight: normal;">(5)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#数据库'>数据库 <small style="font-weight: normal;">(4)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#网络'>网络 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#中间件'>中间件 <small style="font-weight: normal;">(3)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#读书'>读书 <small style="font-weight: normal;">(12)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#个人提升'>个人提升 <small style="font-weight: normal;">(5)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#思维导图'>思维导图 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#大数据'>大数据 <small style="font-weight: normal;">(1)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#自动驾驶'>自动驾驶 <small style="font-weight: normal;">(2)</small></a></li>
+        
+          
+          
+          <li><a href='/DailyNotes/tags.html#windows'>windows <small style="font-weight: normal;">(1)</small></a></li>
+        
+      </ul>
+    </nav>
+  </aside>
+</div>
+
+
+
+  </div>
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/DailyNotes/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 每日笔记. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/DailyNotes/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/DailyNotes/assets/js/lunr/lunr.min.js"></script>
+<script src="/DailyNotes/assets/js/lunr/lunr-store.js"></script>
+<script src="/DailyNotes/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

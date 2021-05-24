@@ -1,16 +1,19 @@
 ---
 tags: 编程语言
+header:
+  image: "http://zhouzm.cn/images/%E7%BE%8E%E5%9B%BE/210420%E9%B1%BC.jpg"
 ---
 
-#### 编译安装
+## 编译安装
 
 ```bash
-sudo apt install libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev
-./configure --prefix=$prefix  #打开config.log查找ssl、ffi是否成功
+sudo apt install libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev libsqlite3-dev
+./configure --prefix=$prefix --enable-loadable-sqlite-extensions #打开config.log查找ssl、ffi、sqlite是否成功
 make
 make install
 ```
 
+## 代码片段
 #### 参数解释
 
 ```python
@@ -80,5 +83,45 @@ import requests
 req = requests.post(url, data={'name': 'value'})
 # 获取应答
 print(req.text)
+```
+
+#### 日期时间
+
+###### datetime
+```python
+# 当前datetime
+datetime.datetime.now()
+
+# datetime -> timestamp
+datetime.datetime.now().timestamp()
+
+# 年月日
+datetime.datetime(year, month, day)
+
+# 当前日期字符串
+datetime.datetime.now().strftime('%Y-%m-%d')
+```
+###### struct_time
+```python
+# 当前struct_time
+time.localtime()
+
+# 昨天的日期时间
+time.localtime(time.time() - 24 * 3600)
+
+# 字符串 -> struct_time
+time.strptime('2014/12/12', '%Y/%m/%d')
+
+# unix时间戳 -> struct_time
+time.localtime(ts)
+```
+
+
+
+###### timestamp
+
+```python
+# 当前时间戳
+time.time()
 ```
 

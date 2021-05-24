@@ -42,3 +42,20 @@ dpkg --listfiles $package_name
 # 库中软件信息
 apt-cache show $package_name
 ```
+
+
+
+#### systemctl
+
+```bash
+# 列出全部服务
+systemctl --type=service
+
+# 显示服务状态
+systemctl status $service_name
+
+
+```
+
+
+

@@ -42,11 +42,11 @@ for root, dirs, files in os.walk('.'):
                     if file_content.startswith('---'):
                         matter_splits = file_content.split('---', 2)
                         for matter_line in matter_splits[1].split('\n'):
-                            matter_line = matter_line.strip('\r\n\t ')
+                            matter_line = matter_line.strip('\r\n\t')
                             if not matter_line:
                                 continue
-                            matter_name, matter_value = matter_line.split(':')
-                            matter_dict[matter_name.strip('\r\n\t ')] = matter_value.strip('\r\n\t ')
+                            matter_name, matter_value = matter_line.split(':', 1)
+                            matter_dict[matter_name.strip('\r\n\t')] = matter_value.strip('\r\n\t ')
                         file_content = matter_splits[2]
                     new_file.write('---\n')
                     for matter_name in matter_dict.keys():

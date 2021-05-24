@@ -1,91 +1,128 @@
 ---
 tags: 开发工具
+header:
+  image: "http://zhouzm.cn/images/%E7%BE%8E%E5%9B%BE/210519%E6%B8%B8%E6%88%8F.jpg"
 ---
+
+
 
 ## 概念
 
 #### Workspace
 
-* 包含软件`源代码`
-* 包含`输出目录`的符号链接
-* 包含`WORKSPACE文件`指明外部依赖
-* 包含WORKSPACE文件的目录是workspace的`根目录`
-* 忽略子目录的WORKSPACE文件
-* 可以是`WORKSPACE.bazel`
+包含软件 **源代码**；
+
+包含 **输出目录** 的符号链接；
+
+WORKSPACE （或 WORKSPACE.bazel）文件指明 **外部依赖**；
+
+包含 WORKSPACE 文件的目录是 workspace 的 **根目录**；
+
+忽略子目录的 WORKSPACE 文件
+
+
 
 #### Repositories
 
-* 仓库用来`组织代码`
-* 根目录又称`主仓库`或`@`
-* `外部仓库`（external）在WORKSPACE中定义
+用来 **组织代码**；
+
+根目录又称 **主仓库** 或 **@**；
+
+**外部仓库**（external）在WORKSPACE 中定义
+
+
 
 #### Packages
 
-* 目录包含`BUILD`或`BUILD.bazel`文件
-* `文件`和`依赖关系`的集合
+**文件** 和 **依赖关系** 的集合；
+
+包含 **BUILD**（或BUILD.bazel）文件
+
+
 
 #### Targets
 
-* package包含的元素，主要是`文件`或`规则`
+package 包含的元素，主要是 **文件或规则**
+
+
 
 #### Labels
 
-target的名称，格式为`@repositrory_name//package_name:target_name`：
+target 的名称
 
-```
+```bash
+# 格式为 @repositrory_name//package_name:target_name
 @myrepo//my/app/main:app_binary
-//my/app/main:app_binary    #同一个仓库
+//my/app/main:app_binary    # 同一个仓库
 //my/app:app
-//my/app     #同上
+//my/app     # 同上
 ```
 
 
 
 #### Rules
 
-* 指明输入文件和输出文件的关系
-* 生成输出文件的步骤
+指明输入文件和输出文件的 **关系**；
 
-## WORKSPACE规则
+生成输出文件的 **步骤**
 
-Workspace规则主要用来解决外部依赖
+![](http://zhouzm.cn/DailyNotes/assets/images/bazel.webp)
 
-#### bind
+🌴
 
-在//external中为目标指定一个别名。不推荐使用。
+## 命令
 
-#### local_repository
+#### bazel
 
-引用其他目录中的目标
+###### 🔹build
 
+```bash
+# 显示详细错误
+bazel build $target --verbose_failures --sandbox_debug
 ```
+
+###### 🔹clean
+
+```bash
+bazel clean
+```
+
+###### 🔹fetch
+
+###### 🔹run
+
+###### 🔹info
+
+###### 🔹shutdown
+
+🌴
+
+## 文件
+
+#### WORKSPACE
+
+###### 🔹bind
+
+在 //external 中为目标指定一个别名
+
+
+
+###### 🔹local_repository
+
+```bash
+# 引用其他目录中的目标
 local_repository(
     name = "my-ssl",
     path = "/home/user/ssl",
 )
 ```
 
-可以指定`@my-ssl//src:openssl-lib`作为这个库的依赖。
 
-#### new_local_repository
 
-把本地目录变成一个Bazel仓库。
+###### 🔹new_local_repository
 
-比如聊天app代码目录在*/chat-app*，要用的SSL库在*～/ssl*。
-
-1、添加*~/chat-app/BUILD.my-ssl*：
-
-```
-java_library(
-    name = "openssl",
-    srcs = glob(['*.java'])
-    visibility = ["//visibility:public"],
-)
-```
-
-2、在~/chat-app/WORKSPACE加上：
-
-```
+```bash
+# 把本地目录变成一个仓库
 new_local_repository(
     name = "my-ssl",
     path = "/home/user/ssl",
@@ -93,46 +130,60 @@ new_local_repository(
 )
 ```
 
-然后就可以把`@my-ssl//:openssl`添加到目标的依赖。
 
 
+#### BUILD
 
-## BUILD文件
+###### 🔹cc_binary
 
-
-
-## C/C++规则
-
-#### cc_binary
-
-```bazel
+```bash
 cc_binary(
     name = "hello-world",
     srcs = ["hello-world.cc"],
 )
 ```
 
-#### cc_import
+###### 🔹cc_import
 
-#### cc_library
+```bash
+# 导入 C/C++ 库
+cc_import(
+  name = "mylib",
+  hdrs = ["mylib.h"],
+  shared_library = "libmylib.so",
+)
+```
 
-#### cc_proto_library
+###### 🔹cc_library
 
-#### fdo_prefetch_hints
+```bash
+cc_library(
+    name = "baz",
+    srcs = [
+        "baz.cc",
+        "baz-impl.h",
+    ],
+    hdrs = ["baz.h"],
+)
+```
 
-#### fdo_profile
+###### 🔹cc_proto_library
 
-#### propeller_optimize
+###### 🔹fdo_prefetch_hints
 
-#### cc_test
+###### 🔹fdo_profile
 
-#### cc_toolchain
+###### 🔹propeller_optimize
 
-#### cc_toolchain_suite
+###### 🔹cc_test
 
+###### 🔹cc_toolchain
 
+###### 🔹cc_toolchain_suite
 
-## 文档链接
+🌴
+
+## 文档
 
 * [Concepts and Terminology](https://docs.bazel.build/versions/master/build-ref.html)
 * [Workspace Rules](https://docs.bazel.build/versions/master/be/workspace.html)
