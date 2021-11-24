@@ -4,9 +4,11 @@ import os.path
 import datetime
 import shutil
 
-jekyll_dir = os.path.dirname(__file__)
+jekyll_dir = os.path.join(os.getcwd(), os.path.dirname(__file__))
 os.chdir(jekyll_dir)
 os.system('rm -rvf _posts/* _site/')
+os.makedirs('_posts', exist_ok=True)
+os.makedirs('_site', exist_ok=True)
 
 # 列出markdown文件
 file_list = []
@@ -37,7 +39,8 @@ for root, dirs, files in os.walk('.'):
                     file_content = open(file_path).read()
                     matter_dict = {
                         'layout': 'posts',
-                        'title': file_name[: file_name.rfind('.')]
+                        'title': file_name[: file_name.rfind('.')],
+                        'tags': '未分类',
                     }
                     if file_content.startswith('---'):
                         matter_splits = file_content.split('---', 2)
@@ -59,4 +62,5 @@ for root, dirs, files in os.walk('.'):
 # 编译网站
 os.chdir(jekyll_dir)
 os.system('bundle exec jekyll build')
+os.system('ln -svf ../../images _site/assets/')
 

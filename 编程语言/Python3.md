@@ -125,3 +125,38 @@ time.localtime(ts)
 time.time()
 ```
 
+## 疑难问题
+
+#### 解决matplotlib无法显示
+
+提示:
+
+```
+Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+```
+
+解决办法：
+
+```
+pip3 install PyQt5
+```
+
+
+
+## 第三方库
+
+#### pip3安装第三方库
+
+```bash
+# 安装wheel文件
+pip3 install $wheel_file
+```
+
+
+
+#### matplotlib
+
+* [Specifying Colors](https://matplotlib.org/stable/tutorials/colors/colors.html#sphx-glr-tutorials-colors-colors-py)
+* [matplotlib.pyplot.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)
+

@@ -30,7 +30,23 @@ db.colname.createIndex({"fieldname": 1},
 )
 ```
 
+## 更新
+
+#### update
+
+```js
+db.collection.updateOne(
+   where,
+   { $set: {
+       status: "D"
+   }}
+)
+```
+
+
+
 ## 查询
+
 #### find
 ```javascript
 //时间范围：
@@ -195,5 +211,5 @@ for (var i in dbs){
 //退出
 use admin;
 db.shutdownServer()
-
 ```
+

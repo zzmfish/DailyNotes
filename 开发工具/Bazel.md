@@ -8,6 +8,8 @@ header:
 
 ## 概念
 
+![](http://zhouzm.cn/DailyNotes/assets/images/bazel.webp)
+
 #### Workspace
 
 包含软件 **源代码**；
@@ -20,7 +22,7 @@ WORKSPACE （或 WORKSPACE.bazel）文件指明 **外部依赖**；
 
 忽略子目录的 WORKSPACE 文件
 
-
+<br>
 
 #### Repositories
 
@@ -30,7 +32,7 @@ WORKSPACE （或 WORKSPACE.bazel）文件指明 **外部依赖**；
 
 **外部仓库**（external）在WORKSPACE 中定义
 
-
+<br>
 
 #### Packages
 
@@ -38,13 +40,13 @@ WORKSPACE （或 WORKSPACE.bazel）文件指明 **外部依赖**；
 
 包含 **BUILD**（或BUILD.bazel）文件
 
-
+<br>
 
 #### Targets
 
 package 包含的元素，主要是 **文件或规则**
 
-
+<br>
 
 #### Labels
 
@@ -58,7 +60,7 @@ target 的名称
 //my/app     # 同上
 ```
 
-
+<br>
 
 #### Rules
 
@@ -66,9 +68,9 @@ target 的名称
 
 生成输出文件的 **步骤**
 
-![](http://zhouzm.cn/DailyNotes/assets/images/bazel.webp)
 
-🌴
+
+<center>☁️☁️☁️</center>
 
 ## 命令
 
@@ -77,14 +79,22 @@ target 的名称
 ###### 🔹build
 
 ```bash
+# 显示子命令
+bazel build $target -s
+bazel build $target --subcommands
+
 # 显示详细错误
 bazel build $target --verbose_failures --sandbox_debug
+
+# 限制内存和 CPU
+bazel build $target --local_cpu_resources=HOST_CPUS*.5 --local_ram_resources=HOST_RAM*.5
 ```
 
 ###### 🔹clean
 
 ```bash
 bazel clean
+bazel clean --expunge
 ```
 
 ###### 🔹fetch
@@ -95,7 +105,7 @@ bazel clean
 
 ###### 🔹shutdown
 
-🌴
+<center>☁️☁️☁️</center>
 
 ## 文件
 
@@ -130,7 +140,7 @@ new_local_repository(
 )
 ```
 
-
+<br>
 
 #### BUILD
 
@@ -181,7 +191,7 @@ cc_library(
 
 ###### 🔹cc_toolchain_suite
 
-🌴
+<center>☁️☁️☁️</center>
 
 ## 文档
 

@@ -1,10 +1,14 @@
 ---
-tags: Linux 开发工具
+tags: Linux
 ---
 
 ## 架构
 
 ![](http://zhouzm.cn/DailyNotes/assets/images/docker%E6%9E%B6%E6%9E%84.png)
+
+<br>
+
+<center>🐶🐶🐶</center>
 
 ## 命令
 
@@ -18,18 +22,29 @@ tags: Linux 开发工具
 
 ###### 🔹push
 
-<center>🍉🍉🍉</center>
+<br>
 
 #### 镜像
 
 ###### 🔹build
 
+| 参数                     | 作用                                                |
+| ------------------------ | --------------------------------------------------- |
+| -f, --file \<Dockerfile> |                                                     |
+| --force-rm               | Always remove intermediate containers               |
+| -m, --memory \<bytes>    | Memory limit                                        |
+| --pull                   | Always attempt to pull a newer version of the image |
+| -t, --tag \<list\>       | Name and optionally a tag in the 'name:tag' format  |
+| --build-arg \<list>      | Set build-time variables                            |
+| --squash                 | Squash newly built layers into a single new layer   |
+
 ```bash
 # 根据Dockerfile构建镜像
 docker build .
+docker build -f $dockerfile .
 
 # 构建镜像同时打上tag
-docker build -t simulation:v1 .
+docker build -t $repo_name:$tag_name .
 ```
 
 ###### 🔹commit
@@ -69,7 +84,7 @@ docker rmi $image_tag
 docker tag $image_id $repo_name:$tag_name
 ```
 
-<center>🍉🍉🍉</center>
+<br>
 
 #### 容器
 
@@ -93,8 +108,6 @@ docker cp $container:$remote_path $local_file
 # 解决 bash 无法输入中文
 docker exec -it $container env LANG=C.UTF-8 /bin/bash
 ```
-
-
 
 ###### 🔹export
 
@@ -144,6 +157,8 @@ docker rm $container_id
 
 ###### 🔹run
 
+Run a command in a new container
+
 ```bash
 # -i: 保持stdin
 # -t: 分配伪终端
@@ -164,9 +179,21 @@ docker run -it --
 
 ###### 🔹start
 
+Start one or more stopped containers
+
 ###### 🔹stats
 
 ###### 🔹stop
+
+```bash
+# 停止一个container
+docker stop $container
+
+# 停止一个container，指定等待时间
+docker stop $container -t 10
+```
+
+
 
 ###### 🔹top
 
@@ -176,7 +203,7 @@ docker run -it --
 
 ###### 🔹wait
 
-<center>🍉🍉🍉</center>
+<br>
 
 #### 其他
 
@@ -185,6 +212,52 @@ docker run -it --
 ###### 🔹info
 
 ###### 🔹version
+
+<center>🐶🐶🐶</center>
+
+## Dockerfile
+
+#### 配置指令
+
+###### 🔹ARG
+
+###### 🔹FROM
+
+###### 🔹LABEL
+
+###### 🔹EXPOSE
+
+###### 🔹ENV
+
+###### 🔹ENTRYPOINT
+
+###### 🔹VOLUME
+
+###### 🔹USER
+
+###### 🔹WORKDIR
+
+###### 🔹ONBUILD
+
+###### 🔹STOPSIGNAL
+
+###### 🔹HEALTHCHECK
+
+###### 🔹SHELL
+
+<br>
+
+#### 操作指令
+
+###### 🔹RUN
+
+###### 🔹CMD
+
+###### 🔹ADD
+
+###### 🔹COPY
+
+<center>🐶🐶🐶</center>
 
 ## 问题
 
@@ -214,5 +287,4 @@ docker push 127.0.0.1:5000/$repo_name:$tag_name
 # 查看仓库中的镜像
 curl '127.0.0.1:5000/v2/_catalog'
 ```
-
 

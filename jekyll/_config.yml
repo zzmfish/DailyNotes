@@ -45,6 +45,9 @@ minima:
   skin: solarized
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
+site:
+  after_footer_scripts:
+    - "http://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 defaults:
   # _posts
   - scope:

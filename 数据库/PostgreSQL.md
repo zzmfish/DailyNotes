@@ -10,10 +10,13 @@ tags: 数据库
 ```bash
 # 切换用户 postgres
 sudo -i -u postgres
+
 # 进入 shell
 psql
+
 # 设置密码
 \password postgres
+
 # 退出
 \q
 exit
@@ -52,7 +55,7 @@ sudo systemctl restart postgresql
 
 <center>🍉🍉🍉</center>
 
-## Shell 命令
+## Shell
 
 ```bash
 # 查看数据库列表
@@ -71,7 +74,16 @@ sudo systemctl restart postgresql
 
 <center>🍉🍉🍉</center>
 
-## SQL 语句
+## SQL
+
+#### 用户管理
+
+```sql
+# 显示用户名
+SELECT rolname FROM pg_roles;
+```
+
+
 
 #### 数据库
 
@@ -93,7 +105,7 @@ ORDER BY 2;
 
 ```sql
 -- 增加列
-ALTER TABLE table_name ADD column_name column_type;
+ALTER TABLE table_name ADD COLUMN column_name column_type;
 
 -- 重命名列
 ALTER TABLE table_name RENAME COLUMN column_name TO new_name;
@@ -110,6 +122,12 @@ ALTER TABLE table_name DROP COLUMN column_name;
 -- 唯一索引
 CREATE UNIQUE INDEX index_name
 ON table_name (column_name);
+
+-- 解决插入数据id错误
+SELECT setval(
+    '"table_name_id_seq"',
+    (SELECT max(id) FROM table_name) + 1
+);
 ```
 
 <center>🍉🍉🍉</center>
@@ -208,6 +226,8 @@ CREATE TABLE sal_emp (
     pay_by_quarter  integer[],
     schedule        text[][]
 );
+
+select count(*) from simulation_scenario where 'traffic_flow'=any(labels);
 ```
 
 #### 复合
@@ -248,3 +268,4 @@ conn = psycopg2.connect(host=host, port=port, database=database,
 ```
 
 https://wiki.postgresql.org/wiki/Psycopg2_Tutorial
+

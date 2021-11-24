@@ -2,35 +2,27 @@
 tags: 开发工具
 ---
 
-## 概念
-
-![](http://zhouzm.cn/DailyNotes/assets/images/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E3%80%81%E7%89%88%E6%9C%AC%E5%BA%93.jpg)
-
-
-
-![](http://zhouzm.cn/DailyNotes/assets/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.jpg)
-
-## git 命令
+## 命令
 
 #### 仓库
 
-###### 🔹init
+###### 💻init
 
-###### 🔹clone
+###### 💻clone
 
-<center>🍉🍉🍉</center>
+<center>🍉</center>
 
 #### 工作区
 
-###### 🔹add
+###### 💻add
 
-###### 🔹apply
+###### 💻apply
 
 ```bash
 git apply $patch_file
 ```
 
-###### 🔹diff
+###### 💻diff
 
 ```bash
 # 显示名称和状态
@@ -43,10 +35,9 @@ git diff $commit^!
 git diff --binary $commit_or_branch > $patch_file
 ```
 
+###### 💻mv
 
-###### 🔹mv
-
-###### 🔹rm
+###### 💻rm
 
 ```bash
 #从仓库和本地文件删除
@@ -59,9 +50,7 @@ git rm -r $folder_name
 git rm --cached $file_name
 ```
 
-
-
-###### 🔹status
+###### 💻status
 
 ```bash
 # 不显示未跟踪的文件
@@ -70,49 +59,76 @@ git status -u no
 git status -uno
 ```
 
-<center>🍉🍉🍉</center>
+<center>🍉</center>
 
 #### 储藏
 
-###### 🔹stash
+###### 💻stash
+
+push
 
 ```bash
-#储藏更改
+# 储藏更改
 git stash
 
-#储藏更改并说明原因
+# 储藏更改并说明原因
 git stash push -m $message
+git stash save $message
+```
+list
 
+```bash
 #查看现有储藏
 git stash list
+```
+show
 
+```bash
 #显示储藏详情
 git stash show $stash
 
 #显示diff
-git stash show -p
+git stash show -p stash@{1}
+```
 
-#应用最近的储藏
+apply
+
+```bash
+# 应用最近的储藏
 git stash apply
 git stash apply stash@{1}
 ```
 
-<center>🍉🍉🍉</center>
+pop
+
+```bash
+# apply 之后 drop
+```
+
+drop
+
+```bash
+# 删除一个储藏
+```
+
+<center>🍉</center>
 
 #### 提交
 
-###### 🔹blame
+###### 💻blame
 
-###### 🔹cherry-pick
+```bash
+# 显示每一行代码的作者
+```
+
+###### 💻cherry-pick
 
 ```bash
 # 合并特定commit
 git cherry-pick $commit_id...
 ```
 
-
-
-###### 🔹commit
+###### 💻commit
 
 ```bash
 # 参数
@@ -121,86 +137,101 @@ git cherry-pick $commit_id...
 # -a 提交全部修改或删除的文件（不包括新增）
 
 # 公司提MR格式规范
-git commit -sm "[SIM-xxx][BehaviorPlanning] message content"
+git commit -sm "message"
 
 # 弹出编辑器修改上一个commit message（没有push才能改）
 git commit -s --amend
 ```
 
-
-
-###### 🔹log
+###### 💻log
 
 ```bash
-#最近10条日志
+# 最近10条日志
 git log -n 10
 
-#单行显示
+# 单行显示
 git log --pretty=oneline
 git log --oneline
 
-#修改的文件
+# 修改的文件
 git log --name-only -10
-
-#修改的文件内容
 git log --name-status -10
 
-#master的修改
-git log -n20 --graph --pretty=oneline master
-
-#显示分支名
+# 显示分支名
 git log --oneline --decorate -10
 
 # 显示某个分支的修改
 git log --oneline -10 $branch_name
 
-#显示分支图
+# 显示分支图
 git log --oneline --decorate --graph -10
+
+# 在所有历史查找文件
+git log --all --full-history -- "**/thefile.*"
 ```
 
-
-
-###### 🔹reset
+###### 💻reset
 
 ![](http://zhouzm.cn/DailyNotes/assets/images/git%20reset.png)
+
+<u>--soft</u>
+
+回退到某个版本 
 
 ```bash
 # 撤销一次commit
 git reset --soft HEAD^
+```
 
+<u>--mixed</u> （默认）
+
+重置暂存区与上一次提交
+
+```bash
 # 回滚到 commit
 git reset $commit_id
 
 # 撤销 add
 git reset HEAD $file_name
+```
 
-# 放弃本地修改
+<u>--hard</u>
+
+撤销工作区未提交内容，重置暂存区与工作区，并删除之前的所有信息提交
+
+```bash
+# 放弃本地修改、撤销未完成的pull
 git reset --hard origin/master
 
 # 撤销未完成的 merge（merge前的版本号）
 git reset --hard $commit_id
+
+# 放弃本地分支的commit
+git reset --hard origin/$branch_name
 ```
 
-
-
-###### 🔹show
+###### 💻show
 
 ```bash
 # 显示某个版本的文件
 git show $revision:$file_path
-
-# 显示某个commit的修改
-git show $commit
-
-# 显示某个分支的文件
 git show $branch_name:$file_path
+
+# 显示commit/stash的diff
+git show $commit
+git show -p $commmit
+git show stash@{0}
+git show -p stash@{0}
+
+# 只显示名称
+git show --name-status stash@{0}
 ```
 
-<center>🍉🍉🍉</center>
+<center>🍉</center>
 
 #### 分支
 
-###### 🔹checkout
+###### 💻checkout
 
 ```bash
 # 新建分支
@@ -220,99 +251,112 @@ git checkout $branch_name $file_name
 git checkout HEAD $file_name
 ```
 
-
-
-###### 🔹branch
+###### 💻branch
 
 ```bash
-#显示当前分支
+# 显示当前分支
 git branch --show-current
 
-#删除本地分支
+# 删除本地分支
 git branch -d $branch_name
 
-#显示全部分支
+# 强制删除本地未合并的分支
+git branch -D $branch_name
+
+# 显示全部分支
 git branch -a
 
-#显示远程分支
+# 显示远程分支
 git branch -r
 ```
 
-
-
-###### 🔹merge
+###### 💻merge
 
 ```bash
 # 取消合并
 git merge --abort
 ```
 
+###### 💻rebase
 
+```bash
+# rebase master
+git rebase master
 
-###### 🔹rebase
+# 解决冲突之后继续
+git rebase --continue
 
-<center>🍉🍉🍉</center>
+# 多个commit合并成一个
+git rebase -i HEAD~3
+git rebase -i $prev_commit
+```
+
+<center>🍉</center>
 
 #### 远程
 
-###### 🔹fetch
+###### 💻fetch
 ```bash
 # 拉取远程分支到本地
 git fetch origin $branch_name
 ```
 
-
-
-###### 🔹pull
+###### 💻pull
 
 ```bash
 # rebase 远程提交而不是 merge
 git pull --rebase
 ```
 
-
-
-###### 🔹push
+###### 💻push
 
 ```bash
 # 推送到远程分支
 git push origin $branch_name
 ```
 
-
-
-###### 🔹remote
+###### 💻remote
 
 ```bash
 # 更改代码库地址
 git remote set-url origin $new_url
 ```
 
-<center>🍉🍉🍉</center>
+<center>🍉</center>
 
 #### 其他
 
-###### 🔹bisect
+###### 💻bisect
 
-###### 🔹grep
+###### 💻grep
 
-###### 🔹ls-files
+###### 💻ls-files
 
 ```bash
 # 恢复本地删除的文件
 git ls-files -d | xargs -i git checkout {}
 ```
 
-###### 🔹sparse-checkout
+###### 💻sparse-checkout
 
-###### 🔹restore
+###### 💻restore
 
-###### 🔹switch
+###### 💻switch
 
-###### 🔹symbolic-ref
+###### 💻symbolic-ref
 ```bash
 #显示当前所属分支
 git symbolic-ref --short HEAD
 ```
 
-###### 🔹tag
+###### 💻tag
+
+<center>🍉🍉🍉</center>
+
+## 架构
+
+![](http://zhouzm.cn/DailyNotes/assets/images/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E3%80%81%E7%89%88%E6%9C%AC%E5%BA%93.jpg)
+
+
+
+![](http://zhouzm.cn/DailyNotes/assets/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.jpg)

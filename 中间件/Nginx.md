@@ -1,5 +1,7 @@
 ---
-tags: 中间件
+tags: 服务器
+header:
+  image: "http://zhouzm.cn/images/%E7%BE%8E%E5%9B%BE/210603%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1.jpg"
 ---
 
 #### 命令
