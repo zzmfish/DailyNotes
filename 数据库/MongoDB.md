@@ -12,7 +12,7 @@ db
 db.getName()
 ```
 #### 集合
-```
+```javascript
 //重命名集合
 db.colname.renameCollection('new_name')
 ```
@@ -21,6 +21,9 @@ db.colname.renameCollection('new_name')
 ```javascript
 //查看索引
 db.colname.getIndexes()
+
+//创建唯一索引
+db.colname.createIndex({"fieldname": 1 }, {unique: true})
 
 //创建TTL索引
 db.colname.createIndex({"fieldname": 1},

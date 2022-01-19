@@ -288,3 +288,6 @@ docker push 127.0.0.1:5000/$repo_name:$tag_name
 curl '127.0.0.1:5000/v2/_catalog'
 ```
 
+#### dockerignore文件
+
+`.dockerignore` 应用于 docker 镜像的构建，它存在于 docker 构建上下文的根目录，用来排除不需要上传到 docker 服务端的文件或目录

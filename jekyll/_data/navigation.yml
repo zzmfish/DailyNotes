@@ -10,7 +10,7 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
-- title: "Tags"
+- title: "🔖"
   url: /tags.html
-- title: "🌀"
-  url: "javascript:location.reload()"
+# - title: "🌀"
+#   url: "javascript:location.reload()"

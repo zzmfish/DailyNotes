@@ -2,11 +2,13 @@
 tags: 数据库
 ---
 
+## <center>架构</center>
+
 ![](http://zhouzm.cn/DailyNotes/assets/images/PostgreSQL.png)
 
-## 设置
+## <center>设置</center>
 
-#### 设置初始密码
+#### <font color="orange">➢</font> 设置初始密码
 ```bash
 # 切换用户 postgres
 sudo -i -u postgres
@@ -22,40 +24,35 @@ psql
 exit
 ```
 
-#### 给当前登录用户分配权限
+#### <font color="orange">➢</font> 给当前登录用户分配权限
 
 ```bash
 sudo -u postgres createuser --superuser $USER
 sudo -u postgres createdb $USER
 ```
 
-#### 允许远程访问
+#### <font color="orange">➢</font> 允许远程访问
 
-1、编辑文件：`/etc/postgresql/13/main/postgresql.conf`
+* 编辑文件 `/etc/postgresql/13/main/postgresql.conf`
 
 ```bash
-#listen_addresses = 'localhost'
 listen_addresses = '*'
 ```
 
-2、编辑文件：`/etc/postgresql/13/main/pg_hba.conf`
+* 编辑文件 `/etc/postgresql/13/main/pg_hba.conf`
 
 ```bash
-# IPv4 local connections:
-#host    all             all             127.0.0.1/32            md5
 host    all             all             0.0.0.0/0            md5
 ```
 
-#### 重启防火墙和数据库
+#### <font color="orange">➢</font> 重启防火墙和数据库
 
 ```bash
 sudo ufw allow 5432/tcp
 sudo systemctl restart postgresql
 ```
 
-<center>🍉🍉🍉</center>
-
-## Shell
+## <center>Shell</center>
 
 ```bash
 # 查看数据库列表
@@ -71,12 +68,9 @@ sudo systemctl restart postgresql
 \d table_name
 ```
 
+## <center>SQL</center>
 
-<center>🍉🍉🍉</center>
-
-## SQL
-
-#### 用户管理
+#### <font color="orange">➢</font> 用户管理
 
 ```sql
 # 显示用户名
@@ -85,7 +79,7 @@ SELECT rolname FROM pg_roles;
 
 
 
-#### 数据库
+#### <font color="orange">➢</font> 数据库
 
 ```sql
 -- 显示 db 占用的磁盘空间（GB）
@@ -99,7 +93,7 @@ WHERE table_schema = 'public'
 ORDER BY 2;
 ```
 
-#### 表
+#### <font color="orange">➢</font> 表
 
 ###### ALTER TABLE
 
@@ -114,7 +108,7 @@ ALTER TABLE table_name RENAME COLUMN column_name TO new_name;
 ALTER TABLE table_name DROP COLUMN column_name;
 ```
 
-#### 索引
+#### <font color="orange">➢</font> 索引
 
 ###### CREATE INDEX
 
@@ -130,11 +124,9 @@ SELECT setval(
 );
 ```
 
-<center>🍉🍉🍉</center>
+## <center>数据类型</center>
 
-## 数据类型
-
-#### 数值
+#### <font color="orange">➢</font> 数值
 
 ###### smallint
 
@@ -158,14 +150,14 @@ SELECT setval(
 
 ###### money
 
-#### 字符
+#### <font color="orange">➢</font> 字符
 
 ###### character varying(n), varchar(n)
 ###### character(n), char(n)
 ###### text
 ###### bytea
 
-#### 日期时间
+#### <font color="orange">➢</font> 日期时间
 
 ###### timestamp、timestamp  with time zone
 ###### time、time with time zone
@@ -176,13 +168,13 @@ SELECT setval(
 
 ###### boolean
 
-#### 枚举
+#### <font color="orange">➢</font> 枚举
 
 ```sql
 CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');
 ```
 
-#### 图形
+#### <font color="orange">➢</font> 图形
 
 ###### point
 ###### line
@@ -192,19 +184,19 @@ CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');
 ###### polygon
 ###### circle
 
-#### 网络地址
+#### <font color="orange">➢</font> 网络地址
 
 ###### cidr
 ###### inet
 ###### macaddr
 ###### macaddr8
 
-#### 比特位字符串
+#### <font color="orange">➢</font> 比特位字符串
 
 ###### bit(n)
 ###### varying(n)
 
-#### 全文搜索
+#### <font color="orange">➢</font> 全文搜索
 
 ###### tsvector
 ###### tsquery
@@ -212,13 +204,13 @@ CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');
 ###### uuid
 ###### xml
 
-#### JSON
+#### <font color="orange">➢</font> JSON
 
 ###### json
 ###### jsonb
 ###### jsonpath
 
-#### 数组
+#### <font color="orange">➢</font> 数组
 
 ```sql
 CREATE TABLE sal_emp (
@@ -230,7 +222,7 @@ CREATE TABLE sal_emp (
 select count(*) from simulation_scenario where 'traffic_flow'=any(labels);
 ```
 
-#### 复合
+#### <font color="orange">➢</font> 复合
 
 ```sql
 CREATE TYPE complex AS (
@@ -239,7 +231,7 @@ CREATE TYPE complex AS (
 );
 ```
 
-#### 范围
+#### <font color="orange">➢</font> 范围
 
 ###### int4range
 ###### int8range
@@ -248,7 +240,7 @@ CREATE TYPE complex AS (
 ###### tstzrange
 ###### daterange
 
-#### Domain
+#### <font color="orange">➢</font> Domain
 
 有限制条件的基本类型
 
@@ -256,9 +248,7 @@ CREATE TYPE complex AS (
 CREATE DOMAIN posint AS integer CHECK (VALUE > 0);
 ```
 
-<center>🍉🍉🍉</center>
-
-## Python
+## <center>Python</center>
 
 ```python
 import psycopg2

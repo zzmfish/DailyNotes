@@ -2,27 +2,23 @@
 tags: 开发工具
 ---
 
-## 命令
+## <center>仓库</center>
 
-#### 仓库
+###### <span style="background-color: orange">init</span>
 
-###### 💻init
+###### <span style="background-color: orange">clone</span>
 
-###### 💻clone
+## <center>工作区</center>
 
-<center>🍉</center>
+###### <span style="background-color: orange">add</span>
 
-#### 工作区
-
-###### 💻add
-
-###### 💻apply
+###### <span style="background-color: orange">apply</span>
 
 ```bash
 git apply $patch_file
 ```
 
-###### 💻diff
+###### <span style="background-color: orange">diff</span>
 
 ```bash
 # 显示名称和状态
@@ -31,13 +27,14 @@ git diff master --name-status
 # 显示commit和上一个commit的区别
 git diff $commit^!
 
-# 创建patch（可能包含二进制文件如图片）
-git diff --binary $commit_or_branch > $patch_file
+# 创建patch
+git diff > $patch_file
+git diff --binary $commit > $patch_file
 ```
 
-###### 💻mv
+###### <span style="background-color: orange">mv</span>
 
-###### 💻rm
+###### <span style="background-color: orange">rm</span>
 
 ```bash
 #从仓库和本地文件删除
@@ -50,7 +47,7 @@ git rm -r $folder_name
 git rm --cached $file_name
 ```
 
-###### 💻status
+###### <span style="background-color: orange">status</span>
 
 ```bash
 # 不显示未跟踪的文件
@@ -59,13 +56,11 @@ git status -u no
 git status -uno
 ```
 
-<center>🍉</center>
+## <center>储藏</center>
 
-#### 储藏
+###### <span style="background-color: orange">stash</span>
 
-###### 💻stash
-
-push
+<span style="border-bottom: 2px solid orange">push</span>
 
 ```bash
 # 储藏更改
@@ -75,13 +70,13 @@ git stash
 git stash push -m $message
 git stash save $message
 ```
-list
+<span style="border-bottom: 2px solid orange">list</span>
 
 ```bash
 #查看现有储藏
 git stash list
 ```
-show
+<span style="border-bottom: 2px solid orange">show</span>
 
 ```bash
 #显示储藏详情
@@ -91,7 +86,7 @@ git stash show $stash
 git stash show -p stash@{1}
 ```
 
-apply
+<span style="border-bottom: 2px solid orange">apply</span>
 
 ```bash
 # 应用最近的储藏
@@ -99,36 +94,34 @@ git stash apply
 git stash apply stash@{1}
 ```
 
-pop
+<span style="border-bottom: 2px solid orange">pop</span>
 
 ```bash
-# apply 之后 drop
+#apply 之后 drop
 ```
 
-drop
+<span style="border-bottom: 2px solid orange">drop</span>
 
 ```bash
 # 删除一个储藏
 ```
 
-<center>🍉</center>
+## <center>提交</center>
 
-#### 提交
-
-###### 💻blame
+###### <span style="background-color: orange">blame</span>
 
 ```bash
 # 显示每一行代码的作者
 ```
 
-###### 💻cherry-pick
+###### <span style="background-color: orange">cherry-pick</span>
 
 ```bash
 # 合并特定commit
 git cherry-pick $commit_id...
 ```
 
-###### 💻commit
+###### <span style="background-color: orange">commit</span>
 
 ```bash
 # 参数
@@ -143,7 +136,7 @@ git commit -sm "message"
 git commit -s --amend
 ```
 
-###### 💻log
+###### <span style="background-color: orange">log</span>
 
 ```bash
 # 最近10条日志
@@ -170,11 +163,11 @@ git log --oneline --decorate --graph -10
 git log --all --full-history -- "**/thefile.*"
 ```
 
-###### 💻reset
+###### <span style="background-color: orange">reset</span>
 
 ![](http://zhouzm.cn/DailyNotes/assets/images/git%20reset.png)
 
-<u>--soft</u>
+<span style="border-bottom: 2px solid orange">--soft</span>
 
 回退到某个版本 
 
@@ -183,7 +176,7 @@ git log --all --full-history -- "**/thefile.*"
 git reset --soft HEAD^
 ```
 
-<u>--mixed</u> （默认）
+<span style="border-bottom: 2px solid orange">--mixed</span> （默认）
 
 重置暂存区与上一次提交
 
@@ -195,7 +188,7 @@ git reset $commit_id
 git reset HEAD $file_name
 ```
 
-<u>--hard</u>
+<span style="border-bottom: 2px solid orange">--hard</span>
 
 撤销工作区未提交内容，重置暂存区与工作区，并删除之前的所有信息提交
 
@@ -210,7 +203,7 @@ git reset --hard $commit_id
 git reset --hard origin/$branch_name
 ```
 
-###### 💻show
+###### <span style="background-color: orange">show</span>
 
 ```bash
 # 显示某个版本的文件
@@ -227,11 +220,9 @@ git show -p stash@{0}
 git show --name-status stash@{0}
 ```
 
-<center>🍉</center>
+## <center>分支</center>
 
-#### 分支
-
-###### 💻checkout
+###### <span style="background-color: orange">checkout</span>
 
 ```bash
 # 新建分支
@@ -251,7 +242,7 @@ git checkout $branch_name $file_name
 git checkout HEAD $file_name
 ```
 
-###### 💻branch
+###### <span style="background-color: orange">branch</span>
 
 ```bash
 # 显示当前分支
@@ -270,14 +261,14 @@ git branch -a
 git branch -r
 ```
 
-###### 💻merge
+###### <span style="background-color: orange">merge</span>
 
 ```bash
 # 取消合并
 git merge --abort
 ```
 
-###### 💻rebase
+###### <span style="background-color: orange">rebase</span>
 
 ```bash
 # rebase master
@@ -291,72 +282,62 @@ git rebase -i HEAD~3
 git rebase -i $prev_commit
 ```
 
-<center>🍉</center>
+## <center>远程</center>
 
-#### 远程
-
-###### 💻fetch
+###### <span style="background-color: orange">fetch</span>
 ```bash
 # 拉取远程分支到本地
 git fetch origin $branch_name
 ```
 
-###### 💻pull
+###### <span style="background-color: orange">pull</span>
 
 ```bash
 # rebase 远程提交而不是 merge
 git pull --rebase
 ```
 
-###### 💻push
+###### <span style="background-color: orange">push</span>
 
 ```bash
 # 推送到远程分支
 git push origin $branch_name
 ```
 
-###### 💻remote
+###### <span style="background-color: orange">remote</span>
 
 ```bash
 # 更改代码库地址
 git remote set-url origin $new_url
 ```
 
-<center>🍉</center>
+## <center>高级</center>
 
-#### 其他
+###### <span style="background-color: orange">bisect</span>
 
-###### 💻bisect
+###### <span style="background-color: orange">grep</span>
 
-###### 💻grep
-
-###### 💻ls-files
+###### <span style="background-color: orange">ls-files</span>
 
 ```bash
+# 显示修改的文件
+git ls-files -m
+
 # 恢复本地删除的文件
 git ls-files -d | xargs -i git checkout {}
 ```
 
-###### 💻sparse-checkout
+###### <span style="background-color: orange">sparse-checkout</span>
 
-###### 💻restore
+###### <span style="background-color: orange">restore</span>
 
-###### 💻switch
+###### <span style="background-color: orange">switch</span>
 
-###### 💻symbolic-ref
+###### <span style="background-color: orange">symbolic-ref</span>
 ```bash
 #显示当前所属分支
 git symbolic-ref --short HEAD
 ```
 
-###### 💻tag
+###### <span style="background-color: orange">tag</span>
 
-<center>🍉🍉🍉</center>
-
-## 架构
-
-![](http://zhouzm.cn/DailyNotes/assets/images/Git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E3%80%81%E7%89%88%E6%9C%AC%E5%BA%93.jpg)
-
-
-
-![](http://zhouzm.cn/DailyNotes/assets/images/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.jpg)
