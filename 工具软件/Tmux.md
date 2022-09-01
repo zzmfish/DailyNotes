@@ -2,7 +2,7 @@
 tags: Linux
 ---
 
-## 启动
+## <center>命令</center>
 
 ```bash
 tmux new-session -s $session_name
@@ -13,13 +13,15 @@ tmux attach -t $session_name
 tmux detach-client
 ```
 
-<center>☔☔☔</center>
+## <center>快捷键</center>
 
-## 快捷键
 
-前缀 `Ctrl` + `b`
 
-#### 窗口（标签页）
+#### 前缀
+
+`Ctrl` + `b`
+
+#### 窗口
 
 | 按键 | 功能       |
 | ---- | ---------- |
@@ -29,9 +31,10 @@ tmux detach-client
 | p |  前一个窗口 |
 | f |  查找窗口 |
 | , | 重命名当前窗口 |
+| . | 重设序号 |
 | & | 关闭当前窗口 |
 
-#### 窗格（分割窗口）
+#### 窗格
 
 | 按键 | 功能       |
 | ---- | ---------- |
@@ -45,10 +48,7 @@ tmux detach-client
 | }  | 与下一个窗格交换位置 |
 | z | 切换窗格最大化/最小化 |
 
-
-<center>☔☔☔</center>
-
-## 配置
+## <center>配置文件</center>
 
 ```bash
 set -g prefix C-a
@@ -65,18 +65,10 @@ setw -g mode-keys         vi    # 进入复制模式的时候使用 vi 键位（
 
 ```
 
-<center>☔☔☔</center>
-
-## 其他问题
+## <center>其他问题</center>
 
 #### 复制到剪切板
 
 1. 按住 `shift`，`鼠标左键` 选择内容
 2. `Ctrl + Shift+C` 复制
 3. `Ctrl+V` 粘贴
-
-<center>☔☔☔</center>
-
-## 参考
-
-* [Tmux 快捷键 & 速查表 & 简明教程](https://gist.github.com/ryerh/14b7c24dfd623ef8edc7)

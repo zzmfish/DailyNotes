@@ -127,3 +127,4 @@ find | grep -e '\.\(c\|cpp\|h\|hpp\)$' \
 ## 参考
 
 * [Vim Tips Wiki——Buffers](https://vim.fandom.com/wiki/Buffers)
+* [使用vim + cscope/ctags](https://www.cnblogs.com/itech/archive/2012/03/23/2414145.html)

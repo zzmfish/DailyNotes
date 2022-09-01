@@ -62,5 +62,5 @@ for root, dirs, files in os.walk('.'):
 # 编译网站
 os.chdir(jekyll_dir)
 os.system('bundle exec jekyll build')
-os.system('ln -svf ../../images _site/assets/')
+# os.system('ln -svf ../../images _site/assets/')
 

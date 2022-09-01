@@ -1,19 +1,23 @@
 ---
 layout: archive
 ---
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 <div style="position: relative;">
-
   <div>
     <small>
     {% for tagName in page.tags %}
       <a href='/DailyNotes/tags.html#{{ tagName }}'>🔖{{ tagName }}</a>&nbsp;
     {% endfor %}
     </small>
+    <Button id="read-mode-btn" style="float:right; font-size: 12px;" onClick="onClickReadModeBtn(this)">Night</span>
   </div>
 
   {{ content }}
 
+  <!--
   <aside class="sidebar__right ">
     <nav class="toc">
       <header><h4 class="nav__title">Tags</h4></header>
@@ -26,6 +30,30 @@ layout: archive
       </ul>
     </nav>
   </aside>
+  -->
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+
+  //<font class=dot>和<p>
+  const iterator = document.evaluate('//p[./font[@class="dot"]]', document.body, null, XPathResult.UNORDERED_NODE_ITERATOR_TYPE, null);
+  const nodeList = [];
+  let node = iterator.iterateNext();
+  while (node) {
+    nodeList.push(node);
+    node = iterator.iterateNext();
+  }
+  for (node of nodeList) {
+    const prevNode = node.previousElementSibling;
+    if (prevNode && prevNode.tagName == "FONT" && prevNode.className == "dot") {
+      prevNode.parentNode.removeChild(prevNode);
+      node.prepend(prevNode);
+    }
+  }
+});
+
+document.documentElement.setAttribute('data-useragent',  navigator.userAgent);
+</script>
 
 

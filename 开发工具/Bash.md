@@ -2,16 +2,24 @@
 tags: Linux
 ---
 
-## 运算符
+## <center>运算符</center>
 
 #### 算术运算
+
+###### $(())
+
 ```bash
 echo $(( 10 + 3 ))
-
+```
+###### expr
+```
 #求余数
 echo `expr 5 % 4`
 ```
 #### 字符串
+
+###### ${}
+
 ```bash
 ${#str}	        #长度
 ${str:pos}	    #从位置$pos开始提取子串
@@ -28,18 +36,11 @@ ${str/#substr/replacement}	#替换前缀匹配的子串
 ${str/%substr/replacement}	#替换后缀匹配的子串
 ```
 
----
-## 流程控制
-#### case
+## <center>流程控制</center>
+###### case
 ```bash
 case EXPRESSION in
-  PATTERN_1)
-    STATEMENTS
-    ;;
-  PATTERN_2)
-    STATEMENTS
-    ;;
-  PATTERN_N)
+  PATTERN)
     STATEMENTS
     ;;
   *)
@@ -48,17 +49,37 @@ case EXPRESSION in
 esac
 ```
 
+## <center>内置命令</center>
+###### echo
+```bash
+# 显示颜色
+echo -e "\e[31mRed\e[0m"
+```
 
+| Code | Color                    |
+| ---- | :----------------------- |
+| 39   | Default foreground color |
+| 30   | Black                    |
+| 31   | Red                      |
+| 32   | Green                    |
+| 33   | Yellow                   |
+| 34   | Blue                     |
+| 35   | Magenta                  |
+| 36   | Cyan                     |
+| 37   | Light gray               |
+| 90   | Dark gray                |
+| 91   | Light red                |
+| 92   | Light green              |
+| 93   | Light yellow             |
+| 94   | Light blue               |
+| 95   | Light magenta            |
+| 96   | Light cyan               |
+| 97   | White                    |
 
-
-
-
----
-## 内置命令
-#### getopts
+###### getopts
 
 ```bash
-while getopts "a:bc" arg #冒号表示该选项需要参数
+while getopts "a:b" arg #冒号表示该选项需要参数
 do
   case $arg in
     a)
@@ -66,9 +87,6 @@ do
       ;;
     b)
       echo "b"
-      ;;
-    c)
-      echo "c"
       ;;
     ?)  #不认识的选项
       echo "unkonw argument"
@@ -78,7 +96,7 @@ do
 done
 ```
 
-#### set
+###### set
 
 ```bash
 # 变量没声明要报错
@@ -102,7 +120,7 @@ set -eo pipefail
 
 
 
-#### trap
+###### trap
 
 ```bash
 #退出时关闭进程组
@@ -110,31 +128,3 @@ trap 'trap - SIGTERM && kill 0' SIGINT SIGTERM EXIT
 ```
 
 
-
-#### 颜色
-
-```bash
-echo -e "\e[31mRed\e[0m"
-```
-
-
-
-| Code | Color                    |
-| ---- | :----------------------- |
-| 39   | Default foreground color |
-| 30   | Black                    |
-| 31   | Red                      |
-| 32   | Green                    |
-| 33   | Yellow                   |
-| 34   | Blue                     |
-| 35   | Magenta                  |
-| 36   | Cyan                     |
-| 37   | Light gray               |
-| 90   | Dark gray                |
-| 91   | Light red                |
-| 92   | Light green              |
-| 93   | Light yellow             |
-| 94   | Light blue               |
-| 95   | Light magenta            |
-| 96   | Light cyan               |
-| 97   | White                    |

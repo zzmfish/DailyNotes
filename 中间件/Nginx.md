@@ -1,7 +1,5 @@
 ---
-tags: 服务器
-header:
-  image: "http://zhouzm.cn/images/%E7%BE%8E%E5%9B%BE/210603%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1.jpg"
+tags: 中间件
 ---
 
 #### 命令
@@ -24,8 +22,11 @@ nginx -s reload
 #### 配置文件
 ```nginx
 http {
-    # 上传大小限制
+    # maximum allowed size of the client request body
     client_max_body_size 8M;
+    
+    # buffer size for reading client request body.
+    # In case the request body is larger than the buffer, the whole body or only its part is written to a temporary file.
     client_body_buffer_size 128k;
     
     # 列出目录文件
@@ -33,7 +34,7 @@ http {
     charset utf-8;
     
     # 日志格式
-    log_format  main  '$time_local`$remote_addr $request`$status $body_bytes_sent`$http_user_agent';
+    log_format  main  '$time_local`$remote_addr $request`$proxy_host $proxy_port`$status $body_bytes_sent`$http_user_agent';
     access_log  /var/log/nginx/access.log  main;
 
     server {
@@ -45,18 +46,24 @@ http {
             proxy_pass http://localhost:8010;
         }
 
-        #代理
-        location /external/query {
+        location /path {
+            # protocol and address of a proxied server and an optional URI to which a location should be mapped
             proxy_pass http://localhost:8020;
+            
+            # timeout for reading a response from the proxied server
             proxy_read_timeout 1800s;
+            
+            # redefine/append fields to the request header passed to the proxied server
             proxy_set_header X-Real-IP $remote_addr;
         }
         
-        # 用户名/密码验证
-        # apt-get install apache2-utils
-        # sudo htpasswd -c /etc/nginx/htpasswd example_user
         location /secret {
+            # root directory for requests
             root /secret/path;
+            
+            # 用户名/密码验证
+            # apt-get install apache2-utils
+            # sudo htpasswd -c /etc/nginx/htpasswd example_user
             auth_basic_user_file /etc/nginx/htpasswd;
         }
     }

@@ -1,0 +1,28 @@
+---
+tags: 中间件
+---
+
+
+
+#### AMQP协议
+
+* <u>Broker</u>：实现AMQP实体服务，接受客户端连接。
+* <u>Connection</u>：网络连接。
+* <u>Channel</u>：网络信道，消息读写的通道。
+* <u>Message</u>：服务器和应用程序之间传递的数据。
+  * properties: 对消息进行修饰，如优先级*，*延迟；
+  * body: 消息实体内容。
+* <u>Virtual Host</u>：逻辑隔离的虚拟主机。
+* <u>Exchange</u>：接受消息，根据路由键转发消息到绑定的队列。
+  * <u>Direct</u>: 消息被转发到 RouteKey 指定的Queue；
+  * <u>Topic</u>: 消息被转发到Routing key 模糊匹配的 Topic 的Queue上。
+    * `*` 匹配一个单词；
+    * `#` 匹配一个或多个单词；
+  * <u>Fanout</u>：消息都会被发送到与该交换机绑定的队列上，不处理Routing key。
+* <u>Binding</u>：Exchange和Queue之间的虚拟连接；可以包括routing key。
+* <u>Routing Key</u>：路由规则，确定如何路由 一条消息。
+* <u>Queue</u>：存放消息的队列。
+
+
+
+[原文](https://mp.weixin.qq.com/s/u1-iCUlSMTw8p19DM8Pd3Q)

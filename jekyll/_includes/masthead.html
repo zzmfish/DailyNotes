@@ -17,7 +17,39 @@ hm {
   background-color: orange; 
 }
 hu {
-  border-bottom: 2px solid orange;
+  box-shadow: 0px -2px orange inset;
+}
+.archive li > p {
+  display: inline;
+}
+h6 {
+  color: #666 !important;
+  font-size: 0.9em !important;
+}
+.archive ol {
+  padding-left: 2em !important;
+}
+.archive ul {
+  padding-left: 2em !important;
+}
+@media screen and (max-width:480px) {
+  .archive ul {
+    padding-inline-start: 20px !important;
+  }
+}
+.archive font.dot {
+  color: orange;
+  display: inline;
+  margin-right: .3em;
+}
+.archive font.dot + p{
+  display: inline;
+}
+html[data-useragent~='Android'] .archive font.dot {
+  margin-right: 0;
+}
+html[data-useragent~='armv7'] body {
+  font-size: 30px !important;
 }
 </style>
 <div class="masthead">
@@ -55,3 +87,57 @@ hu {
     </div>
   </div>
 </div>
+
+<!--夜间模式 BEGIN-->
+<style>
+body.Night {
+  background-color: #000 !important;
+  color: #ddd !important;
+}
+body.Night thead {
+  background-color: #000 !important;
+}
+body.Night .masthead {
+  background-color: #000 !important;
+}
+</style>
+
+<script>
+var bodyClassName = document.body.className;
+function switchReadMode(mode) {
+  localStorage.setItem('readMode', mode);
+  if (mode == 'night') {
+    document.body.className = bodyClassName + ' Night'
+    setTimeout(function() {
+      var btn = document.getElementById('read-mode-btn');
+      if (btn) {
+        btn.textContent = "Day";
+        btn.style.backgroundColor = '#000';
+        btn.style.color = '#ddd';
+      }
+    }, 1000);
+  } else {
+    document.body.className = bodyClassName
+    setTimeout(function() {
+      var btn = document.getElementById('read-mode-btn');
+      if (btn) {
+        btn.textContent = "Night";
+        btn.style.backgroundColor = '';
+        btn.style.color = '';
+      }
+    }, 1000);
+  }
+}
+
+function onClickReadModeBtn(e) {
+  if (e.textContent.indexOf("Night") > -1) {
+    switchReadMode('night');
+  } else {
+    switchReadMode('day');
+  }
+}
+switchReadMode(localStorage.getItem('readMode'));
+</script>
+<!--夜间模式 END-->
+
+

@@ -2,42 +2,34 @@
 tags: Linux
 ---
 
-## 架构
+## <center>架构</center>
 
 ![](http://zhouzm.cn/DailyNotes/assets/images/docker%E6%9E%B6%E6%9E%84.png)
 
-<br>
 
-<center>🐶🐶🐶</center>
 
-## 命令
+## <center>docker 命令</center>
 
 #### 仓库
 
-###### 🔹login
+###### login
 
-###### 🔹logout
+```bash
+# 登录信息保存到 ~/.docker/config.json
+docker login $server
+```
 
-###### 🔹pull
 
-###### 🔹push
 
-<br>
+###### logout
+
+###### pull
+
+###### push
 
 #### 镜像
 
-###### 🔹build
-
-| 参数                     | 作用                                                |
-| ------------------------ | --------------------------------------------------- |
-| -f, --file \<Dockerfile> |                                                     |
-| --force-rm               | Always remove intermediate containers               |
-| -m, --memory \<bytes>    | Memory limit                                        |
-| --pull                   | Always attempt to pull a newer version of the image |
-| -t, --tag \<list\>       | Name and optionally a tag in the 'name:tag' format  |
-| --build-arg \<list>      | Set build-time variables                            |
-| --squash                 | Squash newly built layers into a single new layer   |
-
+###### build
 ```bash
 # 根据Dockerfile构建镜像
 docker build .
@@ -47,50 +39,71 @@ docker build -f $dockerfile .
 docker build -t $repo_name:$tag_name .
 ```
 
-###### 🔹commit
+###### commit
 
-###### 🔹history
+###### history
+
+###### image
+
+```bash
+# 删除所有未使用的镜像
+docker image prune -a
+```
 
 
-###### 🔹images
+###### images
 
 ```bash
 # 查看全部镜像
 docker images
 ```
 
-###### 🔹import
+###### import
 
-###### 🔹load
-
-###### 🔹rmi
+###### load
 
 ```bash
-#删除镜像
-docker rmi $image_id
-
-#如果镜像有超过一个tag，可以删除一个tag但不删除镜像
-docker rmi $image_tag
+# 导入镜像文件
+docker load -i $file_name
+docker load < $file_name
 ```
 
-###### 🔹save
 
-###### 🔹search
 
-###### 🔹tag
+###### rmi
+
+```bash
+# 删除镜像
+docker rmi $image_id
+
+# 如果镜像有超过一个tag，可以删除一个tag但不删除镜像
+docker rmi $image_tag
+
+# 强制删除：有多个tag的镜像
+docker rmi -f $image_id
+```
+
+###### save
+
+```bash
+# 保存image
+docker save -o $file_name $image_id 
+```
+
+###### search
+
+###### tag
 
 ```bash
 # 镜像命名
 docker tag $image_id $repo_name:$tag_name
 ```
 
-<br>
-
 #### 容器
 
-###### 🔹attach
+###### attach
 
-###### 🔹cp
+###### cp
 
 ```bash
 # 复制文件或目录
@@ -98,35 +111,35 @@ docker cp $local_file $container:$remote_path
 docker cp $container:$remote_path $local_file
 ```
 
-###### 🔹create
+###### create
 
-###### 🔹diff
+###### diff
 
-###### 🔹exec
+###### exec
 
 ```bash
 # 解决 bash 无法输入中文
 docker exec -it $container env LANG=C.UTF-8 /bin/bash
 ```
 
-###### 🔹export
+###### export
 
-###### 🔹inspect
+###### inspect
 
 ```bash
 #显示容器详细信息
 docker inspect $container
 ```
 
-###### 🔹kill
+###### kill
 
-###### 🔹logs
+###### logs
 
-###### 🔹pause
+###### pause
 
-###### 🔹port
+###### port
 
-###### 🔹ps
+###### ps
 
 ```bash
 # 显示正在运行的容器
@@ -139,23 +152,23 @@ docker ps -a
 docker ps --size
 ```
 
-###### 🔹rename
+###### rename
 
 ```bash
 # 给容器命名
 docker rename $container_id $name
 ```
 
-###### 🔹restart
+###### restart
 
-###### 🔹rm
+###### rm
 
 ```bash
 # 删除容器
 docker rm $container_id
 ```
 
-###### 🔹run
+###### run
 
 Run a command in a new container
 
@@ -177,13 +190,13 @@ docker run -p 8080:80 $image $cmd
 docker run -it --
 ```
 
-###### 🔹start
+###### start
 
 Start one or more stopped containers
 
-###### 🔹stats
+###### stats
 
-###### 🔹stop
+###### stop
 
 ```bash
 # 停止一个container
@@ -193,73 +206,65 @@ docker stop $container
 docker stop $container -t 10
 ```
 
+###### top
 
+###### unpause
 
-###### 🔹top
+###### update
 
-###### 🔹unpause
-
-###### 🔹update
-
-###### 🔹wait
-
-<br>
+###### wait
 
 #### 其他
 
-###### 🔹events
+###### events
 
-###### 🔹info
+###### info
 
-###### 🔹version
+###### version
 
-<center>🐶🐶🐶</center>
-
-## Dockerfile
+## <center>Dockerfile</center>
 
 #### 配置指令
 
-###### 🔹ARG
+###### ARG
 
-###### 🔹FROM
+###### FROM
 
-###### 🔹LABEL
+###### LABEL
 
-###### 🔹EXPOSE
+###### EXPOSE
 
-###### 🔹ENV
+###### ENV
 
-###### 🔹ENTRYPOINT
+###### ENTRYPOINT
 
-###### 🔹VOLUME
+###### VOLUME
 
-###### 🔹USER
+###### USER
 
-###### 🔹WORKDIR
+###### WORKDIR
 
-###### 🔹ONBUILD
+###### ONBUILD
 
-###### 🔹STOPSIGNAL
+###### STOPSIGNAL
 
-###### 🔹HEALTHCHECK
+###### HEALTHCHECK
 
-###### 🔹SHELL
+###### SHELL
 
 <br>
 
 #### 操作指令
 
-###### 🔹RUN
+###### RUN
 
-###### 🔹CMD
+###### CMD
 
-###### 🔹ADD
+###### ADD
 
-###### 🔹COPY
+###### COPY
 
-<center>🐶🐶🐶</center>
-
-## 问题
+## <center>问题</center>
 
 #### 数据存放位置（镜像、容器）
 

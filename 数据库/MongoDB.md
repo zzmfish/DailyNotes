@@ -2,55 +2,12 @@
 tags: 数据库
 ---
 
-## 数据库
-
-#### 库
-
-```javascript
-//当前数据库：
-db
-db.getName()
-```
-#### 集合
-```javascript
-//重命名集合
-db.colname.renameCollection('new_name')
-```
-
-#### 索引
-```javascript
-//查看索引
-db.colname.getIndexes()
-
-//创建唯一索引
-db.colname.createIndex({"fieldname": 1 }, {unique: true})
-
-//创建TTL索引
-db.colname.createIndex({"fieldname": 1},
-  { background: true,
-    expireAfterSeconds: 3600
-  }
-)
-```
-
-## 更新
-
-#### update
-
-```js
-db.collection.updateOne(
-   where,
-   { $set: {
-       status: "D"
-   }}
-)
-```
+## <center>使用</center>
 
 
+#### 查找
 
-## 查询
-
-#### find
+###### find
 ```javascript
 //时间范围：
 db.colname.find({fieldname: {$lt: new Date('2017-05-10')}})
@@ -77,7 +34,8 @@ db.colname.find().forEach(function(item) {
 })
 ```
 
-#### aggregate
+#### 聚合
+###### aggregate
 ```javascript
 //北京时间日期
 col.aggregate([
@@ -94,10 +52,91 @@ col.aggregate([
 ])
 ```
 
+#### 更新
+
+###### update
+
+```js
+// 更新多个
+db.collection.updateMany({}, update)
+
+// 更新一个
+db.collection.updateOne(where, update)
+```
+
+###### 数组操作符
+```js
+// $
+
+// $[]
+
+// $[<identifier>]
+
+// $addToSet: add a value unless the value is already present
+db.collection.update(where, {$addToSet: {'field': 'value'}})
+
+// $pop
+
+// $pull
+
+// $push: add a value
+db.collection.update(where, {$push: {'field': 'value'}})
+
+// $pullAll
+```
 
 
 
-## 副本
+## <center>维护</center>
+#### 库
+
+```javascript
+//当前数据库：
+db
+db.getName()
+
+//删除数据库：
+//危险！db.dropDatabase()
+
+//删除全部库
+var dbs = db.getMongo().getDBNames()
+for (var i in dbs){
+    db = db.getMongo().getDB( dbs[i] );
+    print( "dropping db " + db.getName() );
+    //危险！db.dropDatabase();
+}
+```
+#### 集合
+```javascript
+//重命名集合
+db.colname.renameCollection('new_name')
+
+//释放空间
+db.runCommand({compact: "colname"})
+```
+
+#### 索引
+
+```javascript
+//查看索引
+db.colname.getIndexes()
+
+//创建唯一索引
+db.colname.createIndex({"fieldname": 1 }, {unique: true})
+
+//创建TTL索引
+db.colname.createIndex({"fieldname": 1},
+  { background: true,
+    expireAfterSeconds: 3600
+  }
+)
+
+//删除索引
+db.collection.dropIndex('index_name')
+```
+
+
+#### 副本
 ```javascript
 //初始化：
 rs.initiate({
@@ -125,7 +164,7 @@ cfg.members[1].priority = 2
 rs.reconfig(cfg)
 ```
 
-## 分片
+#### 分片
 ```javascript
 //database开启分片
 sh.enableSharding(dbname)
@@ -147,7 +186,6 @@ db.adminCommand("flushRouterConfig")
 ```
 
 
-## 运维
 #### 性能
 ```js
 // 显示某个表正在进行的操作
@@ -189,24 +227,6 @@ db.currentOp().inprog.forEach(function(item) {
     }
   }
 })
-```
-
-#### 删除
-```javascript
-//删除数据库：
-db.drop/*危险*/Database()
-
-//释放删除的空间
-use dbname;
-db.runCommand({compact: "colname"})
-
-//删除全部库
-var dbs = db.getMongo().getDBNames()
-for (var i in dbs){
-    db = db.getMongo().getDB( dbs[i] );
-    print( "dropping db " + db.getName() );
-    db.dropDatabase();
-}
 ```
 
 #### 退出

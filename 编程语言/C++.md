@@ -19,7 +19,8 @@ void foo(const char * format, ...)
 #### 写文件
 
 ```cpp
-//ofstream
+#include <fstream>
+
 ofstream myfile;
 myfile.open ("myfile.txt");
 myfile << "hello\n";

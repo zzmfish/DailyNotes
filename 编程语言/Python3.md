@@ -1,10 +1,8 @@
 ---
 tags: 编程语言
-header:
-  image: "http://zhouzm.cn/images/%E7%BE%8E%E5%9B%BE/210420%E9%B1%BC.jpg"
 ---
 
-## 编译安装
+## <center>编译安装</center>
 
 ```bash
 sudo apt install libssl-dev libffi-dev libbz2-dev libncurses5-dev libncursesw5-dev libsqlite3-dev
@@ -13,7 +11,16 @@ make
 make install
 ```
 
-## 代码片段
+## <center>代码片段</center>
+#### 字符串
+
+```python
+# 千分位分隔
+'{:,}'.format(12345678)
+```
+
+
+
 #### 参数解释
 
 ```python
@@ -27,23 +34,38 @@ print(args.job_id)
 
 #### 日志输出
 
+简单设置：
+
 ```python
 # 输出日志到文件
 logging.basicConfig(filename='example.log', format='%(levelname)s:%(message)s', level=logging.DEBUG)
-# 输出日志到终端
-logger = logging.getLogger()
-logger.addHandler(logging.StreamHandler(sys.stdout))
-logger.setLevel(logging.DEBUG)
-
-# 根据日期切换日志文件
-logging.basicConfig()
-file_handler = logging.handlers.TimedRotatingFileHandler("video.log", 'MIDNIGHT')
-file_handler.formatter = logging.Formatter('%(asctime)s %(message)s’)
-logger = logging.getLogger()
-logger.addHandler(file_handler)
 ```
 
+同时输出到屏幕和文件：
 
+```python
+# disable modules
+logging.getLogger('oss2').setLevel(logging.WARN)
+logging.getLogger('urllib3').setLevel(logging.WARN)
+
+# root logger
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+# formater
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(filename)s:%(lineno)d %(message)s',
+                              datefmt='%Y-%m-%d %H:%M:%S')
+
+# stdout
+handler = logging.StreamHandler(sys.stdout)
+handler.formatter = formatter
+logger.addHandler(handler)
+
+# rotating file
+handler = logging.handlers.TimedRotatingFileHandler("/var/log/server.log", 'MIDNIGHT')
+handler.formatter = formatter
+logger.addHandler(handler)
+```
 
 #### print中文问题
 
@@ -77,10 +99,16 @@ print('\033[32m' + text + '\033[m')
 
 #### 网络请求
 
+###### requests
+
 ```python
 import requests
 # form格式
 req = requests.post(url, data={'name': 'value'})
+
+# 上传文件
+req = requests.post(url, files={'file1': open('xxxx', r)})
+
 # 获取应答
 print(req.text)
 ```
@@ -125,7 +153,7 @@ time.localtime(ts)
 time.time()
 ```
 
-## 疑难问题
+## <center>疑难问题</center>
 
 #### 解决matplotlib无法显示
 
@@ -144,7 +172,7 @@ pip3 install PyQt5
 
 
 
-## 第三方库
+## <center>第三方库</center>
 
 #### pip3安装第三方库
 

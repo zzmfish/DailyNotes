@@ -2,13 +2,9 @@
 tags: 数据库
 ---
 
-## <center>架构</center>
-
-![](http://zhouzm.cn/DailyNotes/assets/images/PostgreSQL.png)
-
 ## <center>设置</center>
 
-#### <font color="orange">➢</font> 设置初始密码
+#### 设置初始密码
 ```bash
 # 切换用户 postgres
 sudo -i -u postgres
@@ -24,14 +20,14 @@ psql
 exit
 ```
 
-#### <font color="orange">➢</font> 给当前登录用户分配权限
+#### 给当前登录用户分配权限
 
 ```bash
 sudo -u postgres createuser --superuser $USER
 sudo -u postgres createdb $USER
 ```
 
-#### <font color="orange">➢</font> 允许远程访问
+#### 允许远程访问
 
 * 编辑文件 `/etc/postgresql/13/main/postgresql.conf`
 
@@ -45,14 +41,18 @@ listen_addresses = '*'
 host    all             all             0.0.0.0/0            md5
 ```
 
-#### <font color="orange">➢</font> 重启防火墙和数据库
+#### 重启防火墙和数据库
 
 ```bash
 sudo ufw allow 5432/tcp
 sudo systemctl restart postgresql
 ```
 
-## <center>Shell</center>
+## <center>程序</center>
+
+###### psql
+
+进入shell
 
 ```bash
 # 查看数据库列表
@@ -68,9 +68,24 @@ sudo systemctl restart postgresql
 \d table_name
 ```
 
+###### pg_dump
+
+```bash
+# dump整个库
+pg_dump
+
+# dump一个表
+pg_dump -t $table_name
+
+# dump一个表的scheme
+pg_dump -st $table_name
+```
+
+
+
 ## <center>SQL</center>
 
-#### <font color="orange">➢</font> 用户管理
+#### 用户管理
 
 ```sql
 # 显示用户名
@@ -79,7 +94,7 @@ SELECT rolname FROM pg_roles;
 
 
 
-#### <font color="orange">➢</font> 数据库
+#### 数据库
 
 ```sql
 -- 显示 db 占用的磁盘空间（GB）
@@ -93,7 +108,21 @@ WHERE table_schema = 'public'
 ORDER BY 2;
 ```
 
-#### <font color="orange">➢</font> 表
+#### 表
+
+###### CREATE TABLE
+
+```sql
+create table simulation_scenario_log (
+  id SERIAL PRIMARY KEY,
+  scenario_id bigint not null,
+  create_time timestamp not null,
+  update_time timestamp not null,
+  event_action varchar(100) not null,
+  event_target varchar(100) not null,
+  event_time timestamp not null
+);
+```
 
 ###### ALTER TABLE
 
@@ -106,9 +135,15 @@ ALTER TABLE table_name RENAME COLUMN column_name TO new_name;
 
 -- 删除列
 ALTER TABLE table_name DROP COLUMN column_name;
+
+-- 添加唯一约束
+ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (column_name);
+
+-- 删除唯一约束
+ALTER TABLE table_name DROP CONSTRAINT constraint_name;
 ```
 
-#### <font color="orange">➢</font> 索引
+#### 索引
 
 ###### CREATE INDEX
 
@@ -126,55 +161,42 @@ SELECT setval(
 
 ## <center>数据类型</center>
 
-#### <font color="orange">➢</font> 数值
+#### 数值
 
 ###### smallint
-
 ###### integer
-
 ###### bigint
-
 ###### decimal
-
 ###### numeric
-
 ###### real
-
 ###### double precision
-
 ###### smallserial
-
 ###### serial
-
 ###### bigserial
-
 ###### money
 
-#### <font color="orange">➢</font> 字符
+#### 字符
 
 ###### character varying(n), varchar(n)
 ###### character(n), char(n)
 ###### text
 ###### bytea
 
-#### <font color="orange">➢</font> 日期时间
+#### 日期时间
 
 ###### timestamp、timestamp  with time zone
 ###### time、time with time zone
-
 ###### date
-
 ###### interval
-
 ###### boolean
 
-#### <font color="orange">➢</font> 枚举
+#### 枚举
 
 ```sql
 CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');
 ```
 
-#### <font color="orange">➢</font> 图形
+#### 图形
 
 ###### point
 ###### line
@@ -184,19 +206,19 @@ CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');
 ###### polygon
 ###### circle
 
-#### <font color="orange">➢</font> 网络地址
+#### 网络地址
 
 ###### cidr
 ###### inet
 ###### macaddr
 ###### macaddr8
 
-#### <font color="orange">➢</font> 比特位字符串
+#### 比特位字符串
 
 ###### bit(n)
 ###### varying(n)
 
-#### <font color="orange">➢</font> 全文搜索
+#### 全文搜索
 
 ###### tsvector
 ###### tsquery
@@ -204,13 +226,13 @@ CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');
 ###### uuid
 ###### xml
 
-#### <font color="orange">➢</font> JSON
+#### JSON
 
 ###### json
 ###### jsonb
 ###### jsonpath
 
-#### <font color="orange">➢</font> 数组
+#### 数组
 
 ```sql
 CREATE TABLE sal_emp (
@@ -219,19 +241,20 @@ CREATE TABLE sal_emp (
     schedule        text[][]
 );
 
+-- 包含元素: =ANY(...)
 select count(*) from simulation_scenario where 'traffic_flow'=any(labels);
 ```
 
-#### <font color="orange">➢</font> 复合
+#### 复合
 
 ```sql
 CREATE TYPE complex AS (
-    r       double precision,
-    i       double precision
+    r double precision,
+    i double precision
 );
 ```
 
-#### <font color="orange">➢</font> 范围
+#### 范围
 
 ###### int4range
 ###### int8range
@@ -240,7 +263,7 @@ CREATE TYPE complex AS (
 ###### tstzrange
 ###### daterange
 
-#### <font color="orange">➢</font> Domain
+#### Domain
 
 有限制条件的基本类型
 
